@@ -4,7 +4,7 @@ namespace RestaurantApp.BLL.Interfaces
 {
     public interface IMenuItemService
     {
-        Task<MenuItem> GetAllMenuItemsAsync();
+        Task<IEnumerable<MenuItem>> GetAllMenuItemsAsync();
         Task<IEnumerable<MenuItem>> GetMenuItemsByCategoryAsync(int categoryId);
         Task AddAsync(string name, double price, int categoryId);
         Task RemoveAsync(int id);

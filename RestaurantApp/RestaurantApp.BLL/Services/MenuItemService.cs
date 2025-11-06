@@ -1,14 +1,15 @@
-using RestaurantApp.BLL.Interfaces;
+﻿using RestaurantApp.BLL.Interfaces;
 using RestaurantApp.Core.Models;
+using RestaurantApp.Core.Interfaces;
 
 namespace RestaurantApp.BLL.Services
 {
     public class MenuItemService : IMenuItemService
     {
-        private readonly IMenuItemRepository _menuItemRepository;
-        private readonly ICategoryRepository _categoryRepository;
+        private readonly IGenericRepository<MenuItem> _menuItemRepository;
+        private readonly IGenericRepository<Category> _categoryRepository;
 
-        public MenuItemService(IMenuItemRepository menuItemRepository, ICategoryRepository categoryRepository)
+        public MenuItemService(IGenericRepository<MenuItem> menuItemRepository, IGenericRepository<Category> categoryRepository)
         {
             _menuItemRepository = menuItemRepository;
             _categoryRepository = categoryRepository;
@@ -18,21 +19,23 @@ namespace RestaurantApp.BLL.Services
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new ArgumentException("Menu Item null ola bilmez.", nameof(name));
+                throw new ArgumentException("Menu item adi null ve ya bos ola bilmez.", nameof(name));
             }
             if (price < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(price), "Qiymet 0dan boyuk olmalidir.");
+                throw new ArgumentOutOfRangeException(nameof(price), "Qiymet 0-dan boyuk olmalidir.");
             }
+
+            var existingItem = await _menuItemRepository.FindAsync(item => item.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            if (existingItem.Any())
+            {
+                throw new InvalidOperationException($"'{name}' adinda artiq menu item movcuddur.");
+            }
+
             var category = await _categoryRepository.GetByIdAsync(categoryId);
             if (category == null)
             {
                 throw new ArgumentException("Bele bir category yoxdur.", nameof(categoryId));
-            }
-            var existingItem = await _menuItemRepository.FindAsync(item => item.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
-            if (existingItem.Any())
-            {
-                throw new InvalidOperationException("Artig bele item var.");
             }
 
             var newMenuItem = new MenuItem
@@ -46,34 +49,99 @@ namespace RestaurantApp.BLL.Services
             await _menuItemRepository.SaveChangesAsync();
         }
 
-        public Task<MenuItem> GetAllMenuItemsAsync()
+        public Task<IEnumerable<MenuItem>> GetAllMenuItemsAsync()
         {
-            throw new NotImplementedException();
+            return _menuItemRepository.GetAllAsync();
         }
 
-        public Task<List<MenuItem>> GetByPriceIntervalAsync(double minPrice, double maxPrice)
+
+        public async Task<List<MenuItem>> GetByPriceIntervalAsync(double minPrice, double maxPrice)
         {
-            throw new NotImplementedException();
+            if (minPrice < 0 || maxPrice < 0)
+            {
+                throw new ArgumentOutOfRangeException("Qiymetler menfi ola bilmez.");
+            }
+
+            var items = await _menuItemRepository.GetAllAsync();
+
+            var filteredItems = items
+                .Where(x => x.Price >= minPrice && x.Price <= maxPrice)
+                .ToList();
+
+            return filteredItems;
         }
 
-        public Task<IEnumerable<MenuItem>> GetMenuItemsByCategoryAsync(int categoryId)
+        public async Task<IEnumerable<MenuItem>> GetMenuItemsByCategoryAsync(int categoryId)
         {
-            throw new NotImplementedException();
+            var category = await _categoryRepository.GetByIdAsync(categoryId);
+            if (category == null)
+            {
+                throw new ArgumentException("Bele bir category yoxdur.", nameof(categoryId));
+            }
+
+            return await _menuItemRepository.FindAsync(item => item.CategoryId == categoryId);
         }
 
-        public Task RemoveAsync(int id)
+        public async Task RemoveAsync(int id)
         {
-            throw new NotImplementedException();
+            var menuItem = await _menuItemRepository.GetByIdAsync(id);
+            if (menuItem == null)
+            {
+                throw new ArgumentException("Bele bir menu item yoxdur.", nameof(id));
+            }
+
+            _menuItemRepository.Delete(menuItem);
+            await _menuItemRepository.SaveChangesAsync();
         }
 
-        public Task<List<MenuItem>> SearchAsync(string search)
+        public async Task<List<MenuItem>> SearchAsync(string search)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                var allItems = await _menuItemRepository.GetAllAsync();
+                return allItems.ToList();
+            }
+
+            var items = await _menuItemRepository.FindAsync(item =>
+                item.Name.Contains(search, StringComparison.OrdinalIgnoreCase));
+
+            return items.ToList();
         }
 
-        public Task UpdateAsync(int id, string newName, double newPrice)
+        public async Task UpdateAsync(int id, string newName, double newPrice)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(newName))
+            {
+                throw new ArgumentException("Menu item adi null ve ya bos ola bilmez.", nameof(newName));
+            }
+
+            if (newPrice < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(newPrice), "Qiymet 0-dan boyuk olmalidir.");
+            }
+
+            var menuItem = await _menuItemRepository.GetByIdAsync(id);
+            if (menuItem == null)
+            {
+                throw new ArgumentException("Bele bir menu item yoxdur.", nameof(id));
+            }
+
+            if (!menuItem.Name.Equals(newName, StringComparison.OrdinalIgnoreCase))
+            {
+                var existingItem = await _menuItemRepository.FindAsync(item =>
+                    item.Name.Equals(newName, StringComparison.OrdinalIgnoreCase));
+
+                if (existingItem.Any())
+                {
+                    throw new InvalidOperationException("Bu adda artiq basqa menu item var.");
+                }
+            }
+
+            menuItem.Name = newName;
+            menuItem.Price = newPrice;
+
+            _menuItemRepository.Update(menuItem);
+            await _menuItemRepository.SaveChangesAsync();
         }
     }
 }

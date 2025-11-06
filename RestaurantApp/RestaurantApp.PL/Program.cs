@@ -20,12 +20,12 @@ namespace RestaurantApp.PL
                 try
                 {
                     context.Database.Migrate();
-                    Console.WriteLine("✓ Database connection successful!");
-                    Console.WriteLine("✓ Migrations applied successfully.");
+                    Console.WriteLine(" Database connection successful!");
+                    Console.WriteLine(" Migrations applied successfully.");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"✗ Database connection failed: {ex.Message}");
+                    Console.WriteLine($" Database connection failed: {ex.Message}");
                 }
             }
         }

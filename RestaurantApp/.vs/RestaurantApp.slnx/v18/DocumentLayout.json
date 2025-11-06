@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.bll\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|solutionrelative:restaurantapp.bll\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.bll\\services\\menuitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|solutionrelative:restaurantapp.bll\\services\\menuitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.bll\\interfaces\\imenuitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|solutionrelative:restaurantapp.bll\\interfaces\\imenuitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C07B293A-B5C7-5B28-823E-A974BA5F90D6}|RestaurantApp.PL\\RestaurantApp.PL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.pl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C07B293A-B5C7-5B28-823E-A974BA5F90D6}|RestaurantApp.PL\\RestaurantApp.PL.csproj|solutionrelative:restaurantapp.pl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7DECC78-3857-A13F-CD5A-D342FE8BE3E4}|RestaurantApp.DLL\\RestaurantApp.DLL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.dll\\repositories\\menuitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7DECC78-3857-A13F-CD5A-D342FE8BE3E4}|RestaurantApp.DLL\\RestaurantApp.DLL.csproj|solutionrelative:restaurantapp.dll\\repositories\\menuitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.bll\\interfaces\\imenuitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|solutionrelative:restaurantapp.bll\\interfaces\\imenuitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.bll\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|solutionrelative:restaurantapp.bll\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.bll\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|solutionrelative:restaurantapp.bll\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,77 +34,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MenuItemRepository.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.DLL\\Repositories\\MenuItemRepository.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.DLL\\Repositories\\MenuItemRepository.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.DLL\\Repositories\\MenuItemRepository.cs",
-              "RelativeToolTip": "RestaurantApp.DLL\\Repositories\\MenuItemRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAALAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Interfaces\\IOrderService.cs",
+              "RelativeDocumentMoniker": "RestaurantApp.BLL\\Interfaces\\IOrderService.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Interfaces\\IOrderService.cs",
+              "RelativeToolTip": "RestaurantApp.BLL\\Interfaces\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T10:30:57.66Z"
+              "WhenOpened": "2025-11-06T12:56:10.467Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "RestaurantApp.BLL\\Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Services\\OrderService.cs",
+              "RelativeToolTip": "RestaurantApp.BLL\\Services\\OrderService.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAEwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T12:24:02.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MenuItemService.cs",
               "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Services\\MenuItemService.cs",
               "RelativeDocumentMoniker": "RestaurantApp.BLL\\Services\\MenuItemService.cs",
               "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Services\\MenuItemService.cs",
               "RelativeToolTip": "RestaurantApp.BLL\\Services\\MenuItemService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAzwA0AAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAEwEYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T10:26:46.665Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.PL\\Program.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.PL\\Program.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.PL\\Program.cs",
-              "RelativeToolTip": "RestaurantApp.PL\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T10:12:38.842Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ICategoryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Interfaces\\ICategoryRepository.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.BLL\\Interfaces\\ICategoryRepository.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Interfaces\\ICategoryRepository.cs",
-              "RelativeToolTip": "RestaurantApp.BLL\\Interfaces\\ICategoryRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T10:10:05.206Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IMenuItemRepository.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Interfaces\\IMenuItemRepository.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.BLL\\Interfaces\\IMenuItemRepository.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Interfaces\\IMenuItemRepository.cs",
-              "RelativeToolTip": "RestaurantApp.BLL\\Interfaces\\IMenuItemRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T10:09:53.264Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IMenuItemService.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Interfaces\\IMenuItemService.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.BLL\\Interfaces\\IMenuItemService.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Interfaces\\IMenuItemService.cs",
-              "RelativeToolTip": "RestaurantApp.BLL\\Interfaces\\IMenuItemService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T10:09:46.642Z"
+              "WhenOpened": "2025-11-06T12:22:21.495Z"
             }
           ]
         }

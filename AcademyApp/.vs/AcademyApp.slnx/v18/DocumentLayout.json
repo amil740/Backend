@@ -1,0 +1,153 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.DLL\\Models\\.gitkeep||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AcademyApp.DLL\\Models\\.gitkeep||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.sln||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AcademyApp.sln||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.Core\\AcademyApp.Core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AcademyApp.Core\\AcademyApp.Core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.BLL\\AcademyApp.BLL.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AcademyApp.BLL\\AcademyApp.BLL.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.DLL\\AcademyApp.DLL.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AcademyApp.DLL\\AcademyApp.DLL.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.Core\\Models\\.gitkeep||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AcademyApp.Core\\Models\\.gitkeep||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.BLL\\Models\\.gitkeep||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AcademyApp.BLL\\Models\\.gitkeep||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-04T19:26:00.048Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitkeep",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.DLL\\Models\\.gitkeep",
+              "RelativeDocumentMoniker": "AcademyApp.DLL\\Models\\.gitkeep",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.DLL\\Models\\.gitkeep",
+              "RelativeToolTip": "AcademyApp.DLL\\Models\\.gitkeep",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-04T19:24:08.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": ".gitkeep",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.BLL\\Models\\.gitkeep",
+              "RelativeDocumentMoniker": "AcademyApp.BLL\\Models\\.gitkeep",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.BLL\\Models\\.gitkeep",
+              "RelativeToolTip": "AcademyApp.BLL\\Models\\.gitkeep",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-04T19:24:05.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": ".gitkeep",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.Core\\Models\\.gitkeep",
+              "RelativeDocumentMoniker": "AcademyApp.Core\\Models\\.gitkeep",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.Core\\Models\\.gitkeep",
+              "RelativeToolTip": "AcademyApp.Core\\Models\\.gitkeep",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-04T19:24:03.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AcademyApp.DLL.csproj",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.DLL\\AcademyApp.DLL.csproj",
+              "RelativeDocumentMoniker": "AcademyApp.DLL\\AcademyApp.DLL.csproj",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.DLL\\AcademyApp.DLL.csproj",
+              "RelativeToolTip": "AcademyApp.DLL\\AcademyApp.DLL.csproj",
+              "ViewState": "AgIAABUAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-04T19:23:49.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AcademyApp.BLL.csproj",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.BLL\\AcademyApp.BLL.csproj",
+              "RelativeDocumentMoniker": "AcademyApp.BLL\\AcademyApp.BLL.csproj",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.BLL\\AcademyApp.BLL.csproj",
+              "RelativeToolTip": "AcademyApp.BLL\\AcademyApp.BLL.csproj",
+              "ViewState": "AgIAAAwAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-04T19:23:44.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AcademyApp.Core.csproj",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.Core\\AcademyApp.Core.csproj",
+              "RelativeDocumentMoniker": "AcademyApp.Core\\AcademyApp.Core.csproj",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.Core\\AcademyApp.Core.csproj",
+              "RelativeToolTip": "AcademyApp.Core\\AcademyApp.Core.csproj",
+              "ViewState": "AgIAAAcAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-04T19:23:40.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AcademyApp.sln",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.sln",
+              "RelativeDocumentMoniker": "AcademyApp.sln",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\AcademyApp\\AcademyApp.sln",
+              "RelativeToolTip": "AcademyApp.sln",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002855|",
+              "WhenOpened": "2025-11-04T19:23:22.015Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

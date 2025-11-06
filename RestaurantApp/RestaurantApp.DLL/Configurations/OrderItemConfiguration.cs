@@ -11,17 +11,17 @@ namespace RestaurantApp.Infrastructure.Data.Configurations
             builder.HasKey(oi => oi.Id);
 
             builder.Property(oi => oi.Count)
-                .IsRequired();
+                   .IsRequired();
 
             builder.HasOne(oi => oi.MenuItem)
-                .WithMany()
-             .HasForeignKey(oi => oi.MenuItemId)
-             .OnDelete(DeleteBehavior.Restrict);
+                   .WithMany()
+                   .HasForeignKey(oi => oi.MenuItemId)
+                   .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(oi => oi.Order)
-   .WithMany(o => o.OrderItems)
-          .HasForeignKey(oi => oi.OrderId)
-  .OnDelete(DeleteBehavior.Cascade);
+                   .WithMany(o => o.OrderItems)
+                   .HasForeignKey(oi => oi.OrderId)
+                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
