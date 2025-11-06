@@ -1,0 +1,5 @@
+[33m7298715[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31mminiproject/main[m[33m)[m Add RestaurantApp project
+[33ma98450e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m refactor: Clean AcademyApp N-tier architecture - only core, BLL, DLL, PL projects
+[33m409be57[m Refactor: Convert DTO projects to N-Tier architecture - Removed separate DTO projects - Consolidated DTOs into respective layers - Updated project references - Created Models folders within each layer - Added .gitignore to exclude build artifacts - Simplified architecture following N-Tier pattern
+[33mf69084c[m Project
+[33m9736198[m Update BookBorrow project - restore project files

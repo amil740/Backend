@@ -1,0 +1,129 @@
+@page "/about"
+
+<PageTitle>About - AI Programming Assistant</PageTitle>
+
+<div class="max-w-4xl mx-auto">
+    <div class="bg-gray-900/50 backdrop-blur-lg rounded-xl border border-gray-800 overflow-hidden">
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-12 text-center">
+            <h1 class="text-4xl font-bold mb-4">About AI Programming Assistant</h1>
+            <p class="text-xl text-blue-100">Advanced AI-Powered Code Analysis & Optimization Tool</p>
+        </div>
+
+        <div class="p-8 space-y-8">
+            <!-- Features -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4 text-blue-400">?? Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-gray-800/50 rounded-lg p-4">
+                        <h3 class="font-bold text-white mb-2">?? Code Analysis</h3>
+                        <p class="text-gray-400 text-sm">Deep analysis of code quality, performance, and security</p>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-lg p-4">
+                        <h3 class="font-bold text-white mb-2">?? Smart Refactoring</h3>
+                        <p class="text-gray-400 text-sm">Automatic refactoring following best practices</p>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-lg p-4">
+                        <h3 class="font-bold text-white mb-2">?? Bug Detection</h3>
+                        <p class="text-gray-400 text-sm">Intelligent bug detection with suggested fixes</p>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-lg p-4">
+                        <h3 class="font-bold text-white mb-2">? Code Completion</h3>
+                        <p class="text-gray-400 text-sm">Context-aware code completion and generation</p>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-lg p-4">
+                        <h3 class="font-bold text-white mb-2">?? Code Explanation</h3>
+                        <p class="text-gray-400 text-sm">Clear explanations of complex code</p>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-lg p-4">
+                        <h3 class="font-bold text-white mb-2">?? Multi-Language</h3>
+                        <p class="text-gray-400 text-sm">Support for C#, Python, JavaScript, and more</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4 text-purple-400">? Technology Stack</h2>
+                <div class="bg-gray-800/50 rounded-lg p-6">
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                            <strong class="mr-2">Frontend:</strong> Blazor Server (.NET 8)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                            <strong class="mr-2">AI Engine:</strong> OpenAI GPT-4 / Azure OpenAI
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
+                            <strong class="mr-2">Styling:</strong> Tailwind CSS
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                            <strong class="mr-2">Code Highlighting:</strong> Highlight.js
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- How to Use -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4 text-green-400">?? How to Use</h2>
+                <div class="bg-gray-800/50 rounded-lg p-6">
+                    <ol class="space-y-3 text-gray-300">
+                        <li class="flex">
+                            <span class="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-3 font-bold">1</span>
+                            <div>
+                                <strong>Select Language:</strong> Choose your programming language from the dropdown
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <span class="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-3 font-bold">2</span>
+                            <div>
+                                <strong>Choose Task:</strong> Select what you want the AI to do (Analyze, Refactor, Debug, etc.)
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <span class="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-3 font-bold">3</span>
+                            <div>
+                                <strong>Paste Code:</strong> Enter or paste your code in the input area
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <span class="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-3 font-bold">4</span>
+                            <div>
+                                <strong>Analyze:</strong> Click "Analyze Code" and wait for AI-powered insights
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Setup Instructions -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4 text-yellow-400">?? Setup Instructions</h2>
+                <div class="bg-gray-800/50 rounded-lg p-6">
+                    <p class="text-gray-300 mb-4">To enable full AI functionality, configure your OpenAI API key:</p>
+                    <div class="bg-gray-900 rounded p-4 font-mono text-sm text-green-400 mb-4">
+                        <div>1. Get your API key from <a href="https://platform.openai.com" class="text-blue-400 underline" target="_blank">OpenAI Platform</a></div>
+                        <div>2. Open <code class="text-yellow-400">appsettings.json</code></div>
+                        <div>3. Replace <code class="text-yellow-400">YOUR_OPENAI_API_KEY_HERE</code> with your actual key</div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        <strong>Note:</strong> The application works in demo mode without an API key, but will provide mock responses.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="text-center pt-8 border-t border-gray-800">
+                <p class="text-gray-400">
+                    Built with ?? using Blazor, .NET 8, and AI
+                </p>
+                <p class="text-gray-500 text-sm mt-2">
+                    © 2024 AI Programming Assistant. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

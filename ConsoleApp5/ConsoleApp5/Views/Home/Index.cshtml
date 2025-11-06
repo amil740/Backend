@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Creative Studio - Generate Images & Videos</title>
+    <link rel="stylesheet" href="~/css/site.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-sparkles"></i>
+                    <span>AI Studio</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-tab="chat">
+                    <i class="fas fa-comments"></i>
+                    <span>Chat</span>
+                </button>
+                <button class="nav-item" data-tab="image">
+                    <i class="fas fa-image"></i>
+                    <span>Image Generator</span>
+                </button>
+                <button class="nav-item" data-tab="video">
+                    <i class="fas fa-video"></i>
+                    <span>Video Generator</span>
+                </button>
+                <button class="nav-item" data-tab="gallery">
+                    <i class="fas fa-folder"></i>
+                    <span>My Gallery</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <div class="user-name">Creative User</div>
+                        <div class="user-status">Pro Plan</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Chat Tab -->
+            <div class="tab-content active" id="chat-tab">
+                <div class="chat-header">
+                    <h1>AI Chat Assistant</h1>
+                    <p>Ask me anything or describe what you want to create</p>
+                </div>
+                
+                <div class="chat-container">
+                    <div class="messages" id="chat-messages">
+                        <div class="message assistant">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-text">
+                                    Hello! I'm your AI creative assistant. I can help you generate images, videos, or just chat about anything. What would you like to create today?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-container">
+                        <div class="input-wrapper">
+                            <textarea 
+                                id="chat-input" 
+                                placeholder="Type your message here... (English keyboard)"
+                                rows="1"
+                            ></textarea>
+                            <button class="send-btn" id="chat-send">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Generator Tab -->
+            <div class="tab-content" id="image-tab">
+                <div class="generator-header">
+                    <h1><i class="fas fa-image"></i> AI Image Generator</h1>
+                    <p>Describe your image in detail and watch AI bring it to life</p>
+                </div>
+
+                <div class="generator-container">
+                    <div class="generator-form">
+                        <div class="form-group">
+                            <label for="image-prompt">Image Description</label>
+                            <textarea 
+                                id="image-prompt" 
+                                placeholder="Describe the image you want to create... (e.g., 'A futuristic city with flying cars at sunset')"
+                                rows="4"
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="image-size">Size</label>
+                            <select id="image-size">
+                                <option value="1024x1024">Square (1024x1024)</option>
+                                <option value="1792x1024">Landscape (1792x1024)</option>
+                                <option value="1024x1792">Portrait (1024x1792)</option>
+                            </select>
+                        </div>
+
+                        <button class="generate-btn" id="generate-image-btn">
+                            <i class="fas fa-wand-magic-sparkles"></i>
+                            <span>Generate Image</span>
+                        </button>
+                    </div>
+
+                    <div class="generator-result">
+                        <div class="result-placeholder" id="image-result">
+                            <i class="fas fa-image"></i>
+                            <p>Your generated image will appear here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Generator Tab -->
+            <div class="tab-content" id="video-tab">
+                <div class="generator-header">
+                    <h1><i class="fas fa-video"></i> AI Video Generator</h1>
+                    <p>Create stunning videos from text descriptions</p>
+                </div>
+
+                <div class="generator-container">
+                    <div class="generator-form">
+                        <div class="form-group">
+                            <label for="video-prompt">Video Description</label>
+                            <textarea 
+                                id="video-prompt" 
+                                placeholder="Describe the video you want to create... (e.g., 'A peaceful ocean wave rolling onto a sandy beach')"
+                                rows="4"
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="video-duration">Duration</label>
+                            <select id="video-duration">
+                                <option value="3">3 seconds</option>
+                                <option value="5" selected>5 seconds</option>
+                                <option value="10">10 seconds</option>
+                            </select>
+                        </div>
+
+                        <button class="generate-btn" id="generate-video-btn">
+                            <i class="fas fa-wand-magic-sparkles"></i>
+                            <span>Generate Video</span>
+                        </button>
+                    </div>
+
+                    <div class="generator-result">
+                        <div class="result-placeholder" id="video-result">
+                            <i class="fas fa-video"></i>
+                            <p>Your generated video will appear here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Tab -->
+            <div class="tab-content" id="gallery-tab">
+                <div class="generator-header">
+                    <h1><i class="fas fa-folder"></i> My Gallery</h1>
+                    <p>View all your AI-generated creations</p>
+                </div>
+
+                <div class="gallery-container" id="gallery-grid">
+                    <div class="gallery-empty">
+                        <i class="fas fa-images"></i>
+                        <p>Your gallery is empty. Start creating!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Creating your masterpiece...</p>
+        </div>
+    </div>
+
+    <script src="~/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+﻿using HRManagementApp.Services;
+
+HumanResourceManagerService hrm = new HumanResourceManagerService();
+string command = "";
+string departmentName = "";
+while (true)
+{
+    MainMenu:
+    Console.WriteLine("-------Main Menu-------");
+    Console.WriteLine("1- Add Employee");
+    Console.WriteLine("2- Edit Employee");
+    Console.WriteLine("3- Get Departments");
+    Console.WriteLine("4- Add Department");
+    Console.WriteLine("5- Edit Department");
+    Console.WriteLine("6- Get All Employees");
+    Console.WriteLine("7- Search Employee");
+    Console.WriteLine("8- Remove Employee");
+    Console.WriteLine("9- Remove Department");
+    Console.WriteLine("0- Exit");
+    Console.Write("Emeliyyat secin: ");
+    command = Console.ReadLine();
+
+    switch (command)
+    {
+        case "1":
+            AddEmployeeLabel:
+            Console.Write("Fullname: ");
+            string fullName = Console.ReadLine();
+            Console.Write("Department Name: ");
+            departmentName = Console.ReadLine();
+            Console.Write("Position: ");
+            string position = Console.ReadLine();
+            Console.Write("Salary: ");
+            string salaryInput = Console.ReadLine();
+            
+            if (!double.TryParse(salaryInput, out double salary))
+            {
+                Console.WriteLine("Xeta: Maas reqem olmalidir!");
+                goto AddEmployeeLabel;
+            }
+            
+            try
+            {
+                hrm.AddEmployee(fullName, departmentName, position, salary);
+                Console.WriteLine($"{fullName} adli isci ugurla elave olundu");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Xeta: {ex.Message}");
+                goto AddEmployeeLabel;
+            }
+            break;
+            
+        case "2":
+            EditEmployeeLabel:
+            Console.Write("Employee No: ");
+            string no = Console.ReadLine();
+            Console.Write("New Position: ");
+            string newPosition = Console.ReadLine();
+            Console.Write("New Salary: ");
+            string newSalaryInput = Console.ReadLine();
+            
+            if (!double.TryParse(newSalaryInput, out double newSalary))
+            {
+                Console.WriteLine("Xeta: Maas reqem olmalidir!");
+                goto EditEmployeeLabel;
+            }
+            
+            try
+            {
+                hrm.EditEmployee(no, newPosition, newSalary);
+                Console.WriteLine($"{no} nomreli isci ugurla deyisdirildi");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Xeta: {ex.Message}");
+                goto EditEmployeeLabel;
+            }
+            break;
+            
+        case "3":
+            hrm.GetAllDepartments();
+            break;
+            
+        case "4":
+            AddDepartmentLabel:
+            Console.Write("Department Name: ");
+            string name = Console.ReadLine();
+            Console.Write("Employee Limit: ");
+            string empLimitInput = Console.ReadLine();
+            
+            if (!int.TryParse(empLimitInput, out int employeeLimit))
+            {
+                Console.WriteLine("Xeta: Employee limit tam reqem olmalidir!");
+                goto AddDepartmentLabel;
+            }
+            
+            Console.Write("Salary Limit: ");
+            string salLimitInput = Console.ReadLine();
+            
+            if (!double.TryParse(salLimitInput, out double salaryLimit))
+            {
+                Console.WriteLine("Xeta: Salary limit reqem olmalidir!");
+                goto AddDepartmentLabel;
+            }
+            
+            try
+            {
+                hrm.AddDepartment(name, employeeLimit, salaryLimit);
+                Console.WriteLine($"{name} adli department ugurla elave olundu");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Xeta: {ex.Message}");
+                goto AddDepartmentLabel;
+            }
+            break;
+            
+        case "5":
+            EditDepartmentLabel:
+            Console.Write("Department Name: ");
+            string deptName = Console.ReadLine();
+            Console.Write("New Employee Limit: ");
+            string newEmpLimitInput = Console.ReadLine();
+            
+            if (!int.TryParse(newEmpLimitInput, out int newEmployeeLimit))
+            {
+                Console.WriteLine("Xeta: Employee limit tam reqem olmalidir!");
+                goto EditDepartmentLabel;
+            }
+            
+            Console.Write("New Salary Limit: ");
+            string newSalLimitInput = Console.ReadLine();
+            
+            if (!double.TryParse(newSalLimitInput, out double newSalaryLimit))
+            {
+                Console.WriteLine("Xeta: Salary limit reqem olmalidir!");
+                goto EditDepartmentLabel;
+            }
+            
+            try
+            {
+                hrm.EditDepartment(deptName, newEmployeeLimit, newSalaryLimit);
+                Console.WriteLine($"{deptName} adli department ugurla deyisdirildi");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Xeta: {ex.Message}");
+                goto EditDepartmentLabel;
+            }
+            break;
+            
+        case "6":
+            hrm.GetAllEmployees();
+            break;
+            
+        case "7":
+            Console.Write("Search: ");
+            string search = Console.ReadLine();
+            hrm.SearchEmployee(search);
+            break;
+            
+        case "8":
+            RemoveEmployeeLabel:
+            Console.Write("Employee No: ");
+            string empNo = Console.ReadLine();
+            
+            try
+            {
+                hrm.RemoveEmployee(empNo);
+                Console.WriteLine($"{empNo} nomreli isci ugurla silindi");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Xeta: {ex.Message}");
+                goto RemoveEmployeeLabel;
+            }
+            break;
+            
+        case "9":
+            RemoveDepartmentLabel:
+            Console.Write("Department Name: ");
+            string deptToRemove = Console.ReadLine();
+            
+            try
+            {
+                hrm.RemoveDepartment(deptToRemove);
+                Console.WriteLine($"{deptToRemove} adli department ugurla silindi");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Xeta: {ex.Message}");
+                goto RemoveDepartmentLabel;
+            }
+            break;
+            
+        case "0":
+            Environment.Exit(0);
+            break;
+            
+        default:
+            Console.WriteLine("Yanlis emeliyyat secdiniz");
+            goto MainMenu;
+    }
+}

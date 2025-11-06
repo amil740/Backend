@@ -1,0 +1,135 @@
+﻿using ConsoleApp3.Models;
+using ConsoleApp3.Services;
+using ConsoleApp3.Transactions;
+using ConsoleApp3.Exceptions;
+using System;
+
+Console.WriteLine("=== Kart və Tranziksiya İdarəetmə Sistemi ===\n");
+
+var cardService = new CardService();
+var transactionService = new TransactionService();
+
+try
+{
+    var card1 = new Card
+    {
+        CardNumber = "1234567890123456",
+        Balance = 1000.0,
+        Bonus = 0,
+        Bank = Bank.ABB
+    };
+
+    var card2 = new Card
+    {
+        CardNumber = "9876543210987654",
+        Balance = 500.0,
+        Bonus = 0,
+        Bank = Bank.Leo
+    };
+
+    var card3 = new Card
+    {
+        CardNumber = "1111222233334444",
+        Balance = 2000.0,
+        Bonus = 0,
+        Bank = Bank.Kapital
+    };
+
+    Console.WriteLine("Kartları əlavə edirik...");
+    cardService.AddCard(card1);
+    cardService.AddCard(card2);
+    cardService.AddCard(card3);
+    Console.WriteLine("Kartlar uğurla əlavə edildi!\n");
+
+    Console.WriteLine("=== Bütün Kartlar ===");
+    var allCards = cardService.GetAll();
+    foreach (var card in allCards)
+    {
+        Console.WriteLine(card.ToString());
+        Console.WriteLine($"Masked Card Number: {card.MaskCardNumber()}");
+        Console.WriteLine();
+    }
+
+    Console.WriteLine("=== İndexer Testi ===");
+    var searchCard = cardService["1234567890123456"];
+    if (searchCard != null)
+    {
+        Console.WriteLine($"Tapılan kart: {searchCard}");
+        Console.WriteLine($"Gizli nömrə: {searchCard.MaskCardNumber()}\n");
+    }
+
+    Console.WriteLine("=== Xərclənmə və Bonus Testi ===");
+    var testCard = cardService["1234567890123456"];
+    if (testCard != null)
+    {
+        Console.WriteLine($"Xərclənmədən əvvəl: Balance={testCard.Balance}, Bonus={testCard.Bonus}");
+
+        bool success = testCard.ExpenseAndGetBonus(100.0, transactionService);
+        Console.WriteLine($"Xərclənmə uğurlu: {success}");
+        Console.WriteLine($"Xərclənmədən sonra: Balance={testCard.Balance}, Bonus={testCard.Bonus}\n");
+    }
+
+    var leoCard = cardService["9876543210987654"];
+    if (leoCard != null)
+    {
+        Console.WriteLine($"Leo kartında xərclənmə əvvəl: Balance={leoCard.Balance}, Bonus={leoCard.Bonus}");
+        leoCard.ExpenseAndGetBonus(50.0, transactionService);
+        Console.WriteLine($"Leo kartında xərclənmə sonra: Balance={leoCard.Balance}, Bonus={leoCard.Bonus}\n");
+    }
+
+    var kapitalCard = cardService["1111222233334444"];
+    if (kapitalCard != null)
+    {
+        Console.WriteLine($"Kapital kartında xərclənmə əvvəl: Balance={kapitalCard.Balance}, Bonus={kapitalCard.Bonus}");
+        kapitalCard.ExpenseAndGetBonus(200.0, transactionService);
+        Console.WriteLine($"Kapital kartında xərclənmə sonra: Balance={kapitalCard.Balance}, Bonus={kapitalCard.Bonus}\n");
+    }
+
+    Console.WriteLine("=== Bütün Tranziksiyalar ===");
+    var allTransactions = transactionService.GetAll();
+    foreach (var transaction in allTransactions)
+    {
+        Console.WriteLine(transaction.ToString());
+    }
+
+    Console.WriteLine("\n=== ABB Kartının Tranziksiyaları ===");
+    var abbTransactions = transactionService.GetTransactionsByCard("1234567890123456");
+    foreach (var transaction in abbTransactions)
+    {
+        Console.WriteLine(transaction.ToString());
+    }
+
+    Console.WriteLine("\n=== Bu günkü Tranziksiyalar ===");
+    var todayTransactions = transactionService.GetTransactionsByDateRange(
+        DateTime.Today,
+        DateTime.Today.AddDays(1));
+    foreach (var transaction in todayTransactions)
+    {
+        Console.WriteLine(transaction.ToString());
+    }
+
+    Console.WriteLine("\n=== WithDraw Metodu Testi ===");
+    if (testCard != null)
+    {
+        Console.WriteLine($"WithDraw əvvəl balance: {testCard.Balance}");
+        bool withdrawSuccess = testCard.WithDraw(50.0);
+        Console.WriteLine($"WithDraw uğurlu: {withdrawSuccess}");
+        Console.WriteLine($"WithDraw sonra balance: {testCard.Balance}");
+    }
+
+}
+catch (ConflictException ex)
+{
+    Console.WriteLine($"Konflikt xətası: {ex.Message}");
+}
+catch (InvalidCardNumberException ex)
+{
+    Console.WriteLine($"Etibarsız kart nömrəsi: {ex.Message}");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Xəta: {ex.Message}");
+}
+
+Console.WriteLine("\nProqram tamamlandı. Enter düyməsini basın...");
+Console.ReadLine();

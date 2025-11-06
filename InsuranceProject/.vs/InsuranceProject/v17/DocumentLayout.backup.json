@@ -1,0 +1,500 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\wwwroot\\js\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\wwwroot\\js\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\wwwroot\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\wwwroot\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\models\\quote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\models\\quote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\models\\auth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\models\\auth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\models\\claim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\models\\claim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\models\\policy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\models\\policy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\insuranceproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\insuranceproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\data\\insurancedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\data\\insurancedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\services\\iservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\services\\iservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\services\\policyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\services\\policyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\services\\claimservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\services\\claimservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\services\\quoteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\services\\quoteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\controllers\\policiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\controllers\\policiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\controllers\\claimscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\controllers\\claimscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\controllers\\quotescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\controllers\\quotescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\insuranceproject\\insuranceproject\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{49ECFC56-FDB5-4C46-A746-28CF3D19AC98}|InsuranceProject\\InsuranceProject.csproj|solutionrelative:insuranceproject\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "InsuranceProject\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Properties\\launchSettings.json",
+              "RelativeToolTip": "InsuranceProject\\Properties\\launchSettings.json",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-12T11:03:35.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\README.md",
+              "RelativeDocumentMoniker": "InsuranceProject\\README.md",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\README.md",
+              "RelativeToolTip": "InsuranceProject\\README.md",
+              "ViewState": "AgIAAK0IAAAAAAAAAAAowPoIAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-10-12T11:03:17.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Dockerfile",
+              "RelativeDocumentMoniker": "InsuranceProject\\Dockerfile",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Dockerfile",
+              "RelativeToolTip": "InsuranceProject\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-12T10:59:54.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "InsuranceProject\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\appsettings.Development.json",
+              "RelativeToolTip": "InsuranceProject\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-12T10:59:49.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\appsettings.json",
+              "RelativeDocumentMoniker": "InsuranceProject\\appsettings.json",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\appsettings.json",
+              "RelativeToolTip": "InsuranceProject\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-12T10:59:45.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "app.js",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\wwwroot\\js\\app.js",
+              "RelativeDocumentMoniker": "InsuranceProject\\wwwroot\\js\\app.js",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\wwwroot\\js\\app.js",
+              "RelativeToolTip": "InsuranceProject\\wwwroot\\js\\app.js",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAQwPACAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-12T10:58:49.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "styles.css",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\wwwroot\\css\\styles.css",
+              "RelativeDocumentMoniker": "InsuranceProject\\wwwroot\\css\\styles.css",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\wwwroot\\css\\styles.css",
+              "RelativeToolTip": "InsuranceProject\\wwwroot\\css\\styles.css",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAAAPQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-12T10:57:39.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "InsuranceProject\\wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\wwwroot\\index.html",
+              "RelativeToolTip": "InsuranceProject\\wwwroot\\index.html",
+              "ViewState": "AgIAALoAAAAAAAAAAAAAAIABAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-10-12T10:57:16.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "InsuranceProject\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:56:23.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "QuotesController.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Controllers\\QuotesController.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Controllers\\QuotesController.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Controllers\\QuotesController.cs",
+              "RelativeToolTip": "InsuranceProject\\Controllers\\QuotesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:56:18.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ClaimsController.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Controllers\\ClaimsController.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Controllers\\ClaimsController.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Controllers\\ClaimsController.cs",
+              "RelativeToolTip": "InsuranceProject\\Controllers\\ClaimsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:56:08.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "PoliciesController.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Controllers\\PoliciesController.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Controllers\\PoliciesController.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Controllers\\PoliciesController.cs",
+              "RelativeToolTip": "InsuranceProject\\Controllers\\PoliciesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:55:59.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CustomersController.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Controllers\\CustomersController.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Controllers\\CustomersController.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Controllers\\CustomersController.cs",
+              "RelativeToolTip": "InsuranceProject\\Controllers\\CustomersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:55:51.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Services\\AuthService.cs",
+              "RelativeToolTip": "InsuranceProject\\Services\\AuthService.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAABBwGcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:55:42.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "QuoteService.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Services\\QuoteService.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Services\\QuoteService.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Services\\QuoteService.cs",
+              "RelativeToolTip": "InsuranceProject\\Services\\QuoteService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:55:31.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ClaimService.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Services\\ClaimService.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Services\\ClaimService.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Services\\ClaimService.cs",
+              "RelativeToolTip": "InsuranceProject\\Services\\ClaimService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:55:19.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PolicyService.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Services\\PolicyService.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Services\\PolicyService.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Services\\PolicyService.cs",
+              "RelativeToolTip": "InsuranceProject\\Services\\PolicyService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:55:11.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CustomerService.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Services\\CustomerService.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Services\\CustomerService.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Services\\CustomerService.cs",
+              "RelativeToolTip": "InsuranceProject\\Services\\CustomerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:55:01.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IServices.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Services\\IServices.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Services\\IServices.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Services\\IServices.cs",
+              "RelativeToolTip": "InsuranceProject\\Services\\IServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:54:53.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Data\\SeedData.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Data\\SeedData.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Data\\SeedData.cs",
+              "RelativeToolTip": "InsuranceProject\\Data\\SeedData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:54:45.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "InsuranceDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Data\\InsuranceDbContext.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Data\\InsuranceDbContext.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Data\\InsuranceDbContext.cs",
+              "RelativeToolTip": "InsuranceProject\\Data\\InsuranceDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:54:27.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Auth.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Models\\Auth.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Models\\Auth.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Models\\Auth.cs",
+              "RelativeToolTip": "InsuranceProject\\Models\\Auth.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:54:17.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Quote.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Models\\Quote.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Models\\Quote.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Models\\Quote.cs",
+              "RelativeToolTip": "InsuranceProject\\Models\\Quote.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:54:12.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Claim.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Models\\Claim.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Models\\Claim.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Models\\Claim.cs",
+              "RelativeToolTip": "InsuranceProject\\Models\\Claim.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:54:07.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Policy.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Models\\Policy.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Models\\Policy.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Models\\Policy.cs",
+              "RelativeToolTip": "InsuranceProject\\Models\\Policy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:54:02.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Models\\Customer.cs",
+              "RelativeToolTip": "InsuranceProject\\Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:53:56.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "InsuranceProject.csproj",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\InsuranceProject.csproj",
+              "RelativeDocumentMoniker": "InsuranceProject\\InsuranceProject.csproj",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\InsuranceProject.csproj",
+              "RelativeToolTip": "InsuranceProject\\InsuranceProject.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-12T10:53:17.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Program.cs",
+              "RelativeDocumentMoniker": "InsuranceProject\\Program.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\InsuranceProject\\InsuranceProject\\Program.cs",
+              "RelativeToolTip": "InsuranceProject\\Program.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAADgv1QAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T10:52:22.74Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

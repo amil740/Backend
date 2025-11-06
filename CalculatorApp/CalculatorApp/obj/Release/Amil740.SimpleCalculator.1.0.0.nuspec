@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Amil740.SimpleCalculator</id>
+    <version>1.0.0</version>
+    <authors>Amil740</authors>
+    <description>A simple calculator library for basic arithmetic operations</description>
+    <tags>calculator math arithmetic</tags>
+    <repository type="git" url="https://github.com/amil740/Amil" commit="498a97418ea73b910c0ad170ef283bb1d90a5a43" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" version="1.22.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\amilm\OneDrive\Desktop\Pa201\CalculatorApp\CalculatorApp\bin\Release\net8.0\CalculatorApp.dll" target="lib\net8.0\CalculatorApp.dll" />
+  </files>
+</package>

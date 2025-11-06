@@ -1,0 +1,254 @@
+﻿using System.Linq.Expressions;
+using System;
+using HRManagementApp.Models;
+using HRManagementApp.Services;
+using HRManagementApp.Interfaces;
+
+HumanResourceManagerService hrm = new HumanResourceManagerService();
+string command = "";
+
+while (true)
+{
+    Console.WriteLine("\n---------MAIN MENU----------");
+    Console.WriteLine("1. Department emeliyyatlari");
+    Console.WriteLine("2. Employee emeliyyatlari");
+    Console.WriteLine("0. Cixis");
+    Console.Write("Secim edin: ");
+    command = Console.ReadLine();
+
+    switch (command)
+    {
+        case "1":
+            DepartmentMenu(hrm);
+            break;
+        case "2":
+            EmployeeMenu(hrm);
+            break;
+        case "0":
+            Console.WriteLine("Proqramdan cixilir...");
+            return;
+        default:
+            Console.WriteLine("Yanlis secim! Yeniden cehd edin.");
+            break;
+    }
+}
+
+static void DepartmentMenu(HumanResourceManagerService hrm)
+{
+    while (true)
+    {
+        Console.WriteLine("\n----- DEPARTMENT MENU -----");
+        Console.WriteLine("1. Department elave et");
+        Console.WriteLine("2. Butun departmentleri gor");
+        Console.WriteLine("3. Department redakte et");
+        Console.WriteLine("4. Department sil");
+        Console.WriteLine("0. Esas menuya qayit");
+        Console.Write("Secim edin: ");
+        string choice = Console.ReadLine();
+
+        switch (choice)
+        {
+            case "1":
+                AddDepartment(hrm);
+                break;
+            case "2":
+                hrm.GetAllDepartments();
+                break;
+            case "3":
+                EditDepartment(hrm);
+                break;
+            case "4":
+                RemoveDepartment(hrm);
+                break;
+            case "0":
+                return;
+            default:
+                Console.WriteLine("Yanlis secim! Yeniden cehd edin.");
+                break;
+        }
+    }
+}
+
+static void EmployeeMenu(HumanResourceManagerService hrm)
+{
+    while (true)
+    {
+        Console.WriteLine("\n----- EMPLOYEE MENU -----");
+        Console.WriteLine("1. Employee elave et");
+        Console.WriteLine("2. Butun employeeleri gor");
+        Console.WriteLine("3. Employee axtar");
+        Console.WriteLine("4. Employee redakte et");
+        Console.WriteLine("5. Employee sil");
+        Console.WriteLine("0. Esas menuya qayit");
+        Console.Write("Secim edin: ");
+        string choice = Console.ReadLine();
+
+        switch (choice)
+        {
+            case "1":
+                AddEmployee(hrm);
+                break;
+            case "2":
+                hrm.GetAllEmployees();
+                break;
+            case "3":
+                SearchEmployee(hrm);
+                break;
+            case "4":
+                EditEmployee(hrm);
+                break;
+            case "5":
+                RemoveEmployee(hrm);
+                break;
+            case "0":
+                return;
+            default:
+                Console.WriteLine("Yanlis secim! Yeniden cehd edin.");
+                break;
+        }
+    }
+}
+
+static void AddDepartment(HumanResourceManagerService hrm)
+{
+    try
+    {
+        Console.Write("Department adi: ");
+        string name = Console.ReadLine();
+
+        Console.Write("Employee limiti: ");
+        int employeeLimit = int.Parse(Console.ReadLine());
+
+        Console.Write("Maas limiti: ");
+        double salaryLimit = double.Parse(Console.ReadLine());
+
+        hrm.AddDepartment(name, employeeLimit, salaryLimit);
+        Console.WriteLine("Department ugurla elave edildi!");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Xeta: {ex.Message}");
+    }
+}
+
+static void EditDepartment(HumanResourceManagerService hrm)
+{
+    try
+    {
+        Console.Write("Department adi: ");
+        string name = Console.ReadLine();
+
+        Console.Write("Yeni employee limiti: ");
+        int newEmployeeLimit = int.Parse(Console.ReadLine());
+
+        Console.Write("Yeni maas limiti: ");
+        double newSalaryLimit = double.Parse(Console.ReadLine());
+
+        hrm.EditDepartment(name, newEmployeeLimit, newSalaryLimit);
+        Console.WriteLine("Department ugurla redakte edildi!");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Xeta: {ex.Message}");
+    }
+}
+
+static void RemoveDepartment(HumanResourceManagerService hrm)
+{
+    try
+    {
+        Console.Write("Silinecek department adi: ");
+        string name = Console.ReadLine();
+
+        hrm.RemoveDepartment(name);
+        Console.WriteLine("Department ugurla silindi!");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Xeta: {ex.Message}");
+    }
+}
+
+static void AddEmployee(HumanResourceManagerService hrm)
+{
+    try
+    {
+        Console.Write("Tam adi: ");
+        string fullName = Console.ReadLine();
+
+        Console.Write("Department adi: ");
+        string departmentName = Console.ReadLine();
+
+        Console.Write("Position: ");
+        string position = Console.ReadLine();
+
+        Console.Write("Maas: ");
+        double salary = double.Parse(Console.ReadLine());
+
+        hrm.AddEmployee(fullName, departmentName, position, salary);
+        Console.WriteLine("Employee ugurla elave edildi!");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Xeta: {ex.Message}");
+    }
+}
+
+static void EditEmployee(HumanResourceManagerService hrm)
+{
+    try
+    {
+        Console.Write("Employee nomresi: ");
+        string no = Console.ReadLine();
+
+        Console.Write("Yeni position: ");
+        string newPosition = Console.ReadLine();
+
+        Console.Write("Yeni maas: ");
+        double newSalary = double.Parse(Console.ReadLine());
+
+        hrm.EditEmployee(no, newPosition, newSalary);
+        Console.WriteLine("Employee ugurla redakte edildi!");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Xeta: {ex.Message}");
+    }
+}
+
+static void RemoveEmployee(HumanResourceManagerService hrm)
+{
+    try
+    {
+        Console.Write("Silinecek employee nomresi: ");
+        string no = Console.ReadLine();
+
+        hrm.RemoveEmployee(no);
+        Console.WriteLine("Employee ugurla silindi!");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Xeta: {ex.Message}");
+    }
+}
+
+static void SearchEmployee(HumanResourceManagerService hrm)
+{
+    try
+    {
+        Console.Write("Axtaris ucun ad daxil edin: ");
+        string search = Console.ReadLine();
+
+        hrm.SearchEmployee(search);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Xeta: {ex.Message}");
+    }
+}
+
+
+
+
+
+

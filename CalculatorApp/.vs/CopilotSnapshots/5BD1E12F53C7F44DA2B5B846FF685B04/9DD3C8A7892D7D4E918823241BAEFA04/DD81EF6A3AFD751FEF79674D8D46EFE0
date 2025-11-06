@@ -1,0 +1,24 @@
+﻿namespace CalculatorApp;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Simple Calculator");
+        Console.WriteLine("-----------------");
+        Console.WriteLine($"10 + 5 = {Calculate(10, 5, "+")}");
+      
+    }
+    
+    static double Calculate(double num1, double num2, string operation)
+    {
+        return operation switch
+        {
+            "+" => num1 + num2,
+            "-" => num1 - num2,
+            "*" => num1 * num2,
+            "/" => num1 / num2,
+            _ => 0
+        };
+    }
+}

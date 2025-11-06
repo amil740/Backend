@@ -1,0 +1,35 @@
+@inherits LayoutComponentBase
+
+<div class="min-h-screen bg-gradient-to-br from-gray-950 via-blue-950 to-gray-950">
+    <!-- Navigation -->
+    <nav class="bg-gray-900/50 backdrop-blur-lg border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <span class="text-xl font-bold">AI</span>
+                    </div>
+                    <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                        AI Programming Assistant
+                    </h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/" class="px-4 py-2 text-gray-300 hover:text-white transition">Home</a>
+                    <a href="/about" class="px-4 py-2 text-gray-300 hover:text-white transition">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        @Body
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 backdrop-blur-lg border-t border-gray-800 mt-16">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-400">
+            <p>© 2024 AI Programming Assistant. Powered by Advanced AI Technology.</p>
+        </div>
+    </footer>
+</div>
