@@ -57,8 +57,7 @@
               "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1051330741\\CategoryService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-08T12:16:18.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T12:16:18.897Z"
             },
             {
               "$type": "Document",
@@ -70,8 +69,7 @@
               "RelativeToolTip": "RestaurantApp.Core\\Interfaces\\IGenericRepository.cs",
               "ViewState": "AgIAABEAAAAAAAAAAMBcwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-08T12:11:04.692Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T12:11:04.692Z"
             },
             {
               "$type": "Document",
@@ -81,7 +79,7 @@
               "RelativeDocumentMoniker": "RestaurantApp.BLL\\Services\\CategoryService.cs",
               "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Services\\CategoryService.cs",
               "RelativeToolTip": "RestaurantApp.BLL\\Services\\CategoryService.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAD4v0oAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-07T18:42:10.151Z",
               "EditorCaption": ""
@@ -96,8 +94,7 @@
               "RelativeToolTip": "RestaurantApp.BLL\\Interfaces\\ICategoryService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T18:42:02.625Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T18:42:02.625Z"
             },
             {
               "$type": "Document",
@@ -109,8 +106,7 @@
               "RelativeToolTip": "RestaurantApp.BLL\\Interfaces\\IOrderService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T12:56:10.467Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T12:56:10.467Z"
             },
             {
               "$type": "Document",
@@ -122,8 +118,7 @@
               "RelativeToolTip": "RestaurantApp.BLL\\Services\\OrderService.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAnwCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T12:24:02.032Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T12:24:02.032Z"
             },
             {
               "$type": "Document",
