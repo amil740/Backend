@@ -1,4 +1,5 @@
 using RestaurantApp.Core.Common;
+using RestaurantApp.Core.Models;
 using System.Linq.Expressions;
 
 namespace RestaurantApp.Core.Interfaces
