@@ -42,13 +42,29 @@ namespace RestaurantApp.BLL.Services
 
         public Task<Category> GetCategoryByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            
+            if (id <= 0)
+            {
+                throw new ArgumentException("Category ID musbet eded olmalidir.", nameof(id));
+            }
+            return _categoryRepository.GetByIdAsync(id);
         }
 
-        public Task RemoveAsync(int id)
+        public async Task RemoveAsync(int id)
         {
-            throw new NotImplementedException();
-        }
+            if (id <= 0)
+            {
+                throw new ArgumentException("Category ID musbet eded olmalidir.", nameof(id));
+            }
+ 
+            var category = await _categoryRepository.GetByIdAsync(id);
+            if (category == null)
+ {
+       throw new InvalidOperationException($"ID-si {id} olan category tapilmadi.");
+            }
+         _categoryRepository.Delete(category);
+        await _categoryRepository.SaveChangesAsync();
+     }
 
         public Task<List<Category>> SearchAsync(string search)
         {
