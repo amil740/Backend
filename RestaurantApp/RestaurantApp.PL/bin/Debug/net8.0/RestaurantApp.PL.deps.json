@@ -489,6 +489,7 @@
       },
       "RestaurantApp.BLL/1.0.0": {
         "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "8.0.0",
           "RestaurantApp.Core": "1.0.0"
         },
         "runtime": {
@@ -510,6 +511,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "8.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection": "8.0.0",
           "RestaurantApp.BLL": "1.0.0",
           "RestaurantApp.Core": "1.0.0"
         },

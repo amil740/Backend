@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using RestaurantApp.BLL.Extensions;
 using RestaurantApp.DLL.Data;
+using RestaurantApp.DLL.Extensions;
 
 namespace RestaurantApp.PL
 {
@@ -10,8 +12,10 @@ namespace RestaurantApp.PL
         {
             var services = new ServiceCollection();
 
-            services.AddDbContext<RestaurantDbContext>(options =>
-                options.UseSqlServer("Server=Amil;Database=RestaurantApp;Trusted_Connection=true;Encrypt=false;TrustServerCertificate=true;"));
+            string connectionString = "Server=Amil;Database=RestaurantApp;Trusted_Connection=true;Encrypt=false;TrustServerCertificate=true;";
+
+            services.AddDataLayerServices(connectionString);
+            services.AddBusinessLogicServices();
 
             var serviceProvider = services.BuildServiceProvider();
 
@@ -20,12 +24,12 @@ namespace RestaurantApp.PL
                 try
                 {
                     context.Database.Migrate();
-                    Console.WriteLine(" Database connection successful!");
-                    Console.WriteLine(" Migrations applied successfully.");
+                    Console.WriteLine("✓ Database connection successful!");
+                    Console.WriteLine("✓ Migrations applied successfully.");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($" Database connection failed: {ex.Message}");
+                    Console.WriteLine($"✗ Database connection failed: {ex.Message}");
                 }
             }
         }
