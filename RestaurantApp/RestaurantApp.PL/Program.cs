@@ -532,6 +532,7 @@ namespace RestaurantApp.PL
                     sifarisItemleri.Add(new OrderItem
                     {
                         MenuItemId = itemId,
+                        MenuItem = seciliItem,
                         Count = sayi
                     });
 
