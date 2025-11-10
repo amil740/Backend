@@ -495,6 +495,7 @@ namespace RestaurantApp.PL
 
                 Console.WriteLine("Itemler:");
                 ItemleriGoster(menuItemler);
+                Console.WriteLine();
 
                 var sifarisItemleri = new List<OrderItem>();
 
