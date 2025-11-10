@@ -13,737 +13,737 @@ namespace RestaurantApp.PL
         private static IServiceProvider _serviceProvider;
         private static ICategoryService _categoryService;
         private static IMenuItemService _menuItemService;
-        private static IOrderService _orderService;
+      private static IOrderService _orderService;
 
         static async Task Main(string[] args)
         {
-            var services = new ServiceCollection();
-            string connectionString = "Server=Amil;Database=RestaurantApp;Trusted_Connection=true;Encrypt=false;TrustServerCertificate=true;";
+  var services = new ServiceCollection();
+          string connectionString = "Server=Amil;Database=RestaurantApp;Trusted_Connection=true;Encrypt=false;TrustServerCertificate=true;";
 
             services.AddDataLayerServices(connectionString);
-            services.AddBusinessLogicServices();
+   services.AddBusinessLogicServices();
 
-            _serviceProvider = services.BuildServiceProvider();
+       _serviceProvider = services.BuildServiceProvider();
 
-            using (var context = _serviceProvider.GetRequiredService<RestaurantDbContext>())
+using (var context = _serviceProvider.GetRequiredService<RestaurantDbContext>())
             {
-                try
+       try
                 {
-                    context.Database.Migrate();
-                    Console.WriteLine("Database connection successful!");
-                    Console.WriteLine("Migrations applied successfully.");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Database connection failed: {ex.Message}");
-                    return;
-                }
+  context.Database.Migrate();
+                    Console.WriteLine("Baza ugurlu baglanidi!");
+               Console.WriteLine("Migrasyonlar tatbiq edildi!");
+        }
+ catch (Exception ex)
+    {
+       Console.WriteLine($"Baza baglanmadi: {ex.Message}");
+            return;
+      }
             }
 
             _categoryService = _serviceProvider.GetRequiredService<ICategoryService>();
-            _menuItemService = _serviceProvider.GetRequiredService<IMenuItemService>();
-            _orderService = _serviceProvider.GetRequiredService<IOrderService>();
+       _menuItemService = _serviceProvider.GetRequiredService<IMenuItemService>();
+     _orderService = _serviceProvider.GetRequiredService<IOrderService>();
 
-            await MainMenu();
+        await AnaMenusu();
+ }
+
+        static async Task AnaMenusu()
+        {
+   while (true)
+      {
+          Console.Clear();
+                Console.WriteLine("=== RESTORAN SIFARIS SISTEMI ===\n");
+       Console.WriteLine("1. Menu islemleri");
+         Console.WriteLine("2. Sifaris islemleri");
+  Console.WriteLine("0. Cixis");
+    Console.Write("\nSecim: ");
+
+     string secim = Console.ReadLine();
+
+      switch (secim)
+           {
+          case "1":
+        await MenuIslemleri();
+        break;
+        case "2":
+           await SifarisIslemleri();
+      break;
+          case "0":
+  Console.WriteLine("\nHosca qalin!");
+    return;
+        default:
+ Console.WriteLine("\nYanlis secim!");
+              Console.ReadKey();
+  break;
+      }
+            }
         }
 
-        static async Task MainMenu()
+ static async Task MenuIslemleri()
         {
             while (true)
             {
-                Console.Clear();
-                Console.WriteLine("=== RESTAURANT ORDER SYSTEM ===\n");
-                Console.WriteLine("1. Menu operations");
-                Console.WriteLine("2. Order operations");
-                Console.WriteLine("0. Exit");
-                Console.Write("\nSelect: ");
+ Console.Clear();
+        Console.WriteLine("=== MENU ISLEMLERI ===\n");
+    Console.WriteLine("1. Yeni elave et");
+       Console.WriteLine("2. Duzelt");
+       Console.WriteLine("3. Sil");
+         Console.WriteLine("4. Hamisini goster");
+    Console.WriteLine("5. Kategoriya boyu goster");
+      Console.WriteLine("6. Qiymet boyu goster");
+             Console.WriteLine("7. Axtar");
+                Console.WriteLine("0. Geri");
+           Console.Write("\nSecim: ");
 
-                string choice = Console.ReadLine();
+        string secim = Console.ReadLine();
 
-                switch (choice)
-                {
-                    case "1":
-                        await MenuOperations();
-                        break;
-                    case "2":
-                        await OrderOperations();
-                        break;
-                    case "0":
-                        Console.WriteLine("\nGoodbye!");
-                        return;
-                    default:
-                        Console.WriteLine("\nInvalid choice. Try again.");
-                        Console.ReadKey();
-                        break;
-                }
+      switch (secim)
+          {
+ case "1":
+          await YeniItemElave();
+       break;
+        case "2":
+ await ItemDuzelt();
+         break;
+  case "3":
+     await ItemSil();
+               break;
+        case "4":
+         await ButunItemleriGoster();
+         break;
+     case "5":
+ await KategoriyaBoyu();
+            break;
+        case "6":
+       await QiymetBoyu();
+   break;
+         case "7":
+            await AxtatItem();
+    break;
+                case "0":
+       return;
+             default:
+        Console.WriteLine("\nYanlis secim!");
+    Console.ReadKey();
+    break;
+     }
             }
         }
 
-        static async Task MenuOperations()
+        static async Task SifarisIslemleri()
         {
             while (true)
-            {
-                Console.Clear();
-                Console.WriteLine("=== MENU OPERATIONS ===\n");
-                Console.WriteLine("1. Add new item");
-                Console.WriteLine("2. Edit item");
-                Console.WriteLine("3. Delete item");
-                Console.WriteLine("4. Show all items");
-                Console.WriteLine("5. Show items by category");
-                Console.WriteLine("6. Show items by price range");
-                Console.WriteLine("7. Search items");
-                Console.WriteLine("0. Back");
-                Console.Write("\nSelect: ");
+   {
+      Console.Clear();
+      Console.WriteLine("=== SIFARIS ISLEMLERI ===\n");
+     Console.WriteLine("1. Yeni sifaris elave et");
+        Console.WriteLine("2. Sifarisi iptal et");
+     Console.WriteLine("3. Tarix araligi boyu goster");
+           Console.WriteLine("4. Mueyyen tarixde goster");
+             Console.WriteLine("5. Qiymet araligi boyu goster");
+          Console.WriteLine("6. Sifaris nomresine gore goster");
+      Console.WriteLine("0. Geri");
+ Console.Write("\nSecim: ");
 
-                string choice = Console.ReadLine();
+string secim = Console.ReadLine();
 
-                switch (choice)
+       switch (secim)
                 {
-                    case "1":
-                        await AddMenuItem();
-                        break;
-                    case "2":
-                        await EditMenuItem();
-                        break;
-                    case "3":
-                        await RemoveMenuItem();
-                        break;
-                    case "4":
-                        await DisplayAllMenuItems();
-                        break;
-                    case "5":
-                        await DisplayMenuItemsByCategory();
-                        break;
-                    case "6":
-                        await DisplayMenuItemsByPriceRange();
-                        break;
-                    case "7":
-                        await SearchMenuItems();
-                        break;
-                    case "0":
-                        return;
-                    default:
-                        Console.WriteLine("\nInvalid choice.");
-                        Console.ReadKey();
-                        break;
-                }
-            }
+    case "1":
+             await YeniSifarisElave();
+                break;
+     case "2":
+await SifarisIptalEt();
+        break;
+        case "3":
+      await TarixAraligindaGoster();
+   break;
+  case "4":
+  await MueyeyenTarixde();
+              break;
+           case "5":
+             await QiymetAraliginda();
+         break;
+         case "6":
+       await SifarisNomresi();
+       break;
+   case "0":
+        return;
+     default:
+Console.WriteLine("\nYanlis secim!");
+        Console.ReadKey();
+  break;
+  }
+         }
         }
 
-        static async Task OrderOperations()
+      static async Task YeniItemElave()
         {
-            while (true)
+      Console.Clear();
+     Console.WriteLine("=== YENI ITEM ELAVE ET ===\n");
+
+          try
             {
-                Console.Clear();
-                Console.WriteLine("=== ORDER OPERATIONS ===\n");
-                Console.WriteLine("1. Add new order");
-                Console.WriteLine("2. Cancel order");
-                Console.WriteLine("3. Show orders by date range");
-                Console.WriteLine("4. Show orders by specific date");
-                Console.WriteLine("5. Show orders by price range");
-                Console.WriteLine("6. Show order by number");
-                Console.WriteLine("0. Back");
-                Console.Write("\nSelect: ");
+     Console.Write("Item adi: ");
+      string ad = Console.ReadLine();
 
-                string choice = Console.ReadLine();
-
-                switch (choice)
-                {
-                    case "1":
-                        await AddOrder();
-                        break;
-                    case "2":
-                        await RemoveOrder();
-                        break;
-                    case "3":
-                        await GetOrdersByDateInterval();
-                        break;
-                    case "4":
-                        await GetOrdersByDate();
-                        break;
-                    case "5":
-                        await GetOrdersByPriceInterval();
-                        break;
-                    case "6":
-                        await GetOrderByNo();
-                        break;
-                    case "0":
-                        return;
-                    default:
-                        Console.WriteLine("\nInvalid choice.");
-                        Console.ReadKey();
-                        break;
+     Console.Write("Qiymet: ");
+       if (!double.TryParse(Console.ReadLine(), out double qiymet) || qiymet < 0)
+     {
+         Console.WriteLine("\nYanlis qiymet!");
+    Console.ReadKey();
+     return;
                 }
-            }
+
+     var kategoriyalar = await _categoryService.GetAllCategoriesAsync();
+            if (!kategoriyalar.Any())
+       {
+         Console.WriteLine("\nHeç bir kategoriya yoxdur!");
+      Console.ReadKey();
+             return;
+                }
+
+     Console.WriteLine("\nKategoriyalar:");
+        var katList = kategoriyalar.ToList();
+           for (int i = 0; i < katList.Count; i++)
+   {
+       Console.WriteLine($"{i + 1}. {katList[i].Name}");
         }
 
-        static async Task AddMenuItem()
+      Console.Write("\nKategoriya sec: ");
+      if (!int.TryParse(Console.ReadLine(), out int katIndex) || katIndex < 1 || katIndex > katList.Count)
+            {
+      Console.WriteLine("\nYanlis secim!");
+              Console.ReadKey();
+     return;
+                }
+
+                var seciliKat = katList[katIndex - 1];
+       await _menuItemService.AddAsync(ad, qiymet, seciliKat.Id);
+     Console.WriteLine("\nItem elave edildi!");
+            }
+            catch (Exception ex)
+{
+ Console.WriteLine($"\nXeta: {ex.Message}");
+            }
+
+  Console.ReadKey();
+        }
+
+        static async Task ItemDuzelt()
+ {
+      Console.Clear();
+      Console.WriteLine("=== ITEM DUZELT ===\n");
+
+     try
+            {
+          Console.Write("Item nomresi: ");
+    if (!int.TryParse(Console.ReadLine(), out int id))
         {
-            Console.Clear();
-            Console.WriteLine("=== ADD NEW MENU ITEM ===\n");
+   Console.WriteLine("\nYanlis nomre!");
+ Console.ReadKey();
+        return;
+     }
+
+     var bütunItemler = await _menuItemService.GetAllMenuItemsAsync();
+         var item = bütunItemler.FirstOrDefault(m => m.Id == id);
+       if (item == null)
+             {
+         Console.WriteLine("\nItem tapilmadi!");
+          Console.ReadKey();
+       return;
+      }
+
+                Console.Write($"Yeni ad (hazirki: {item.Name}): ");
+  string yeniAd = Console.ReadLine();
+
+                Console.Write($"Yeni qiymet (hazirki: {item.Price}): ");
+          if (!double.TryParse(Console.ReadLine(), out double yeniQiymet) || yeniQiymet < 0)
+              {
+      Console.WriteLine("\nYanlis qiymet!");
+       Console.ReadKey();
+       return;
+ }
+
+            await _menuItemService.UpdateAsync(id, yeniAd, yeniQiymet);
+           Console.WriteLine("\nItem duzeltildi!");
+       }
+            catch (Exception ex)
+{
+                Console.WriteLine($"\nXeta: {ex.Message}");
+            }
+
+       Console.ReadKey();
+     }
+
+        static async Task ItemSil()
+   {
+      Console.Clear();
+            Console.WriteLine("=== ITEM SIL ===\n");
 
             try
             {
-                Console.Write("Enter item name: ");
-                string name = Console.ReadLine();
+    Console.Write("Item nomresi: ");
+    if (!int.TryParse(Console.ReadLine(), out int id))
+     {
+          Console.WriteLine("\nYanlis nomre!");
+            Console.ReadKey();
+        return;
+        }
 
-                Console.Write("Enter price: ");
-                if (!double.TryParse(Console.ReadLine(), out double price) || price < 0)
-                {
-                    Console.WriteLine("\nInvalid price format.");
-                    Console.ReadKey();
-                    return;
-                }
+     await _menuItemService.RemoveAsync(id);
+                Console.WriteLine("\nItem silindi!");
+       }
+        catch (Exception ex)
+    {
+    Console.WriteLine($"\nXeta: {ex.Message}");
+     }
 
-                var categories = await _categoryService.GetAllCategoriesAsync();
-                if (!categories.Any())
-                {
-                    Console.WriteLine("\nNo categories exist. Please add a category first.");
-                    Console.ReadKey();
-                    return;
-                }
+      Console.ReadKey();
+ }
 
-                Console.WriteLine("\nAvailable categories:");
-                var categoryList = categories.ToList();
-                for (int i = 0; i < categoryList.Count; i++)
-                {
-                    Console.WriteLine($"{i + 1}. {categoryList[i].Name}");
-                }
+        static async Task ButunItemleriGoster()
+        {
+    Console.Clear();
+          Console.WriteLine("=== BUTUN ITEMLER ===\n");
 
-                Console.Write("\nSelect category (number): ");
-                if (!int.TryParse(Console.ReadLine(), out int catIndex) || catIndex < 1 || catIndex > categoryList.Count)
-                {
-                    Console.WriteLine("\nInvalid selection.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                var selectedCategory = categoryList[catIndex - 1];
-                await _menuItemService.AddAsync(name, price, selectedCategory.Id);
-                Console.WriteLine("\nItem added successfully!");
-            }
-            catch (Exception ex)
+    try
             {
-                Console.WriteLine($"\nError: {ex.Message}");
-            }
+       var itemler = await _menuItemService.GetAllMenuItemsAsync();
+      if (!itemler.Any())
+         {
+      Console.WriteLine("Heç bir item yoxdur!");
+          }
+       else
+    {
+       ItemleriGoster(itemler);
+    }
+          }
+       catch (Exception ex)
+            {
+     Console.WriteLine($"Xeta: {ex.Message}");
+    }
 
             Console.ReadKey();
         }
 
-        static async Task EditMenuItem()
-        {
-            Console.Clear();
-            Console.WriteLine("=== EDIT MENU ITEM ===\n");
+        static async Task KategoriyaBoyu()
+   {
+         Console.Clear();
+ Console.WriteLine("=== KATEGORIYA BOYU ===\n");
 
             try
-            {
-                Console.Write("Enter item number to edit: ");
-                if (!int.TryParse(Console.ReadLine(), out int id))
+{
+       var kategoriyalar = await _categoryService.GetAllCategoriesAsync();
+         if (!kategoriyalar.Any())
+    {
+              Console.WriteLine("Heç bir kategoriya yoxdur!");
+         Console.ReadKey();
+          return;
+      }
+
+           var katList = kategoriyalar.ToList();
+           Console.WriteLine("Kategoriyalar:");
+                for (int i = 0; i < katList.Count; i++)
+     {
+ Console.WriteLine($"{i + 1}. {katList[i].Name}");
+}
+
+           Console.Write("\nKategoriya sec: ");
+      if (!int.TryParse(Console.ReadLine(), out int katIndex) || katIndex < 1 || katIndex > katList.Count)
+     {
+          Console.WriteLine("\nYanlis secim!");
+         Console.ReadKey();
+ return;
+      }
+
+       var seciliKat = katList[katIndex - 1];
+     var itemler = await _menuItemService.GetMenuItemsByCategoryAsync(seciliKat.Id);
+
+      Console.WriteLine($"\n'{seciliKat.Name}' kategoriyasinda itemler:\n");
+              if (!itemler.Any())
+             {
+      Console.WriteLine("Heç bir item yoxdur!");
+    }
+             else
                 {
-                    Console.WriteLine("\nInvalid number format.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                var allItems = await _menuItemService.GetAllMenuItemsAsync();
-                var menuItem = allItems.FirstOrDefault(m => m.Id == id);
-                if (menuItem == null)
-                {
-                    Console.WriteLine("\nItem not found.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                Console.Write($"Enter new name (current: {menuItem.Name}): ");
-                string newName = Console.ReadLine();
-
-                Console.Write($"Enter new price (current: {menuItem.Price}): ");
-                if (!double.TryParse(Console.ReadLine(), out double newPrice) || newPrice < 0)
-                {
-                    Console.WriteLine("\nInvalid price format.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                await _menuItemService.UpdateAsync(id, newName, newPrice);
-                Console.WriteLine("\nItem updated successfully!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"\nError: {ex.Message}");
-            }
-
-            Console.ReadKey();
+       ItemleriGoster(itemler);
+      }
         }
-
-        static async Task RemoveMenuItem()
-        {
-            Console.Clear();
-            Console.WriteLine("=== DELETE MENU ITEM ===\n");
-
-            try
-            {
-                Console.Write("Enter item number to delete: ");
-                if (!int.TryParse(Console.ReadLine(), out int id))
-                {
-                    Console.WriteLine("\nInvalid number format.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                await _menuItemService.RemoveAsync(id);
-                Console.WriteLine("\nItem deleted successfully!");
-            }
             catch (Exception ex)
-            {
-                Console.WriteLine($"\nError: {ex.Message}");
-            }
-
-            Console.ReadKey();
-        }
-
-        static async Task DisplayAllMenuItems()
         {
-            Console.Clear();
-            Console.WriteLine("=== ALL MENU ITEMS ===\n");
+                Console.WriteLine($"Xeta: {ex.Message}");
+     }
 
-            try
+        Console.ReadKey();
+    }
+
+        static async Task QiymetBoyu()
+        {
+         Console.Clear();
+  Console.WriteLine("=== QIYMET BOYU ===\n");
+
+      try
             {
-                var items = await _menuItemService.GetAllMenuItemsAsync();
-                if (!items.Any())
-                {
-                    Console.WriteLine("No items found.");
-                }
+                Console.Write("Min qiymet: ");
+         if (!double.TryParse(Console.ReadLine(), out double minQiymet) || minQiymet < 0)
+        {
+ Console.WriteLine("\nYanlis qiymet!");
+        Console.ReadKey();
+       return;
+    }
+
+     Console.Write("Max qiymet: ");
+  if (!double.TryParse(Console.ReadLine(), out double maxQiymet) || maxQiymet < minQiymet)
+      {
+  Console.WriteLine("\nYanlis qiymet!");
+       Console.ReadKey();
+return;
+      }
+
+                var itemler = await _menuItemService.GetByPriceIntervalAsync(minQiymet, maxQiymet);
+      Console.WriteLine($"\n{minQiymet} - {maxQiymet} araligi:\n");
+      if (!itemler.Any())
+        {
+               Console.WriteLine("Heç bir item yoxdur!");
+       }
                 else
-                {
-                    ShowMenuItemsTable(items);
-                }
+   {
+      ItemleriGoster(itemler);
+   }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
+  catch (Exception ex)
+      {
+                Console.WriteLine($"Xeta: {ex.Message}");
+}
 
             Console.ReadKey();
         }
 
-        static async Task DisplayMenuItemsByCategory()
+        static async Task AxtatItem()
         {
             Console.Clear();
-            Console.WriteLine("=== ITEMS BY CATEGORY ===\n");
+ Console.WriteLine("=== ITEM AXTAR ===\n");
 
-            try
-            {
-                var categories = await _categoryService.GetAllCategoriesAsync();
-                if (!categories.Any())
-                {
-                    Console.WriteLine("No categories found.");
-                    Console.ReadKey();
-                    return;
+         try
+       {
+    Console.Write("Axtar: ");
+      string axtar = Console.ReadLine();
+
+     if (string.IsNullOrWhiteSpace(axtar))
+       {
+                    Console.WriteLine("\nBos ola bilmez!");
+        Console.ReadKey();
+            return;
+     }
+
+       var itemler = await _menuItemService.SearchAsync(axtar);
+    Console.WriteLine($"\n'{axtar}' ucun neticeler:\n");
+             if (!itemler.Any())
+          {
+      Console.WriteLine("Heç bir netice yoxdur!");
                 }
-
-                var categoryList = categories.ToList();
-                Console.WriteLine("Available categories:");
-                for (int i = 0; i < categoryList.Count; i++)
-                {
-                    Console.WriteLine($"{i + 1}. {categoryList[i].Name}");
-                }
-
-                Console.Write("\nSelect category (number): ");
-                if (!int.TryParse(Console.ReadLine(), out int catIndex) || catIndex < 1 || catIndex > categoryList.Count)
-                {
-                    Console.WriteLine("\nInvalid selection.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                var selectedCategory = categoryList[catIndex - 1];
-                var items = await _menuItemService.GetMenuItemsByCategoryAsync(selectedCategory.Id);
-
-                Console.WriteLine($"\nItems in '{selectedCategory.Name}' category:\n");
-                if (!items.Any())
-                {
-                    Console.WriteLine("No items in this category.");
-                }
-                else
-                {
-                    ShowMenuItemsTable(items);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-
-            Console.ReadKey();
+             else
+    {
+          ItemleriGoster(itemler);
         }
+    }
+        catch (Exception ex)
+            {
+      Console.WriteLine($"Xeta: {ex.Message}");
+            }
 
-        static async Task DisplayMenuItemsByPriceRange()
+       Console.ReadKey();
+      }
+
+  static void ItemleriGoster(IEnumerable<MenuItem> itemler)
         {
-            Console.Clear();
-            Console.WriteLine("=== ITEMS BY PRICE RANGE ===\n");
-
-            try
-            {
-                Console.Write("Enter minimum price: ");
-                if (!double.TryParse(Console.ReadLine(), out double minPrice) || minPrice < 0)
-                {
-                    Console.WriteLine("\nInvalid price format.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                Console.Write("Enter maximum price: ");
-                if (!double.TryParse(Console.ReadLine(), out double maxPrice) || maxPrice < minPrice)
-                {
-                    Console.WriteLine("\nInvalid price format.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                var items = await _menuItemService.GetByPriceIntervalAsync(minPrice, maxPrice);
-                Console.WriteLine($"\nItems in price range {minPrice} - {maxPrice}:\n");
-                if (!items.Any())
-                {
-                    Console.WriteLine("No items in this price range.");
-                }
-                else
-                {
-                    ShowMenuItemsTable(items);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-
-            Console.ReadKey();
-        }
-
-        static async Task SearchMenuItems()
-        {
-            Console.Clear();
-            Console.WriteLine("=== SEARCH MENU ITEMS ===\n");
-
-            try
-            {
-                Console.Write("Enter search term: ");
-                string searchTerm = Console.ReadLine();
-
-                if (string.IsNullOrWhiteSpace(searchTerm))
-                {
-                    Console.WriteLine("\nSearch term cannot be empty.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                var items = await _menuItemService.SearchAsync(searchTerm);
-                Console.WriteLine($"\nSearch results for '{searchTerm}':\n");
-                if (!items.Any())
-                {
-                    Console.WriteLine("No results found.");
-                }
-                else
-                {
-                    ShowMenuItemsTable(items);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-
-            Console.ReadKey();
-        }
-
-        static void ShowMenuItemsTable(IEnumerable<MenuItem> items)
-        {
-            Console.WriteLine("ID | Name | Category | Price");
+  Console.WriteLine("ID | Ad | Kategoriya | Qiymet");
             Console.WriteLine("-------------------------------------------");
-            foreach (var item in items)
-            {
+            foreach (var item in itemler)
+  {
                 Console.WriteLine($"{item.Id} | {item.Name} | {item.Category?.Name} | {item.Price:F2}");
+      }
+  }
+
+        static async Task YeniSifarisElave()
+   {
+          Console.Clear();
+       Console.WriteLine("=== YENI SIFARIS ELAVE ET ===\n");
+
+      try
+         {
+       var menuItemler = await _menuItemService.GetAllMenuItemsAsync();
+           if (!menuItemler.Any())
+     {
+           Console.WriteLine("Heç bir item yoxdur!");
+        Console.ReadKey();
+      return;
+       }
+
+    Console.WriteLine("Itemler:");
+ ItemleriGoster(menuItemler);
+
+     var sifarisItemleri = new List<OrderItem>();
+
+           while (true)
+   {
+            Console.Write("\nItem nomresi (0-cix): ");
+       if (!int.TryParse(Console.ReadLine(), out int itemId) || itemId < 0)
+      {
+ Console.WriteLine("Yanlis nomre!");
+       continue;
+     }
+
+     if (itemId == 0)
+     break;
+
+          var seciliItem = menuItemler.FirstOrDefault(m => m.Id == itemId);
+  if (seciliItem == null)
+   {
+          Console.WriteLine("Item tapilmadi!");
+           continue;
+    }
+
+         Console.Write("Sayi: ");
+      if (!int.TryParse(Console.ReadLine(), out int sayi) || sayi <= 0)
+         {
+      Console.WriteLine("Yanlis sayi!");
+  continue;
+     }
+
+    sifarisItemleri.Add(new OrderItem
+         {
+     MenuItemId = itemId,
+            Count = sayi
+  });
+
+      Console.WriteLine("Sifaris-e elave edildi!");
+             }
+
+        if (sifarisItemleri.Any())
+  {
+           var sifaris = new Order
+         {
+        OrderItems = sifarisItemleri,
+               Date = DateTime.Now
+};
+
+       _orderService.AddOrder(sifaris);
+       Console.WriteLine("\nSifaris elave edildi!");
+                }
+      else
+     {
+ Console.WriteLine("\nHeç bir item secilmedi!");
+                }
             }
+    catch (Exception ex)
+       {
+      Console.WriteLine($"\nXeta: {ex.Message}");
+            }
+
+          Console.ReadKey();
         }
 
-        static async Task AddOrder()
+    static async Task SifarisIptalEt()
         {
             Console.Clear();
-            Console.WriteLine("=== ADD NEW ORDER ===\n");
+       Console.WriteLine("=== SIFARIS IPTAL ET ===\n");
+
+    try
+{
+     Console.Write("Sifaris nomresi: ");
+       if (!int.TryParse(Console.ReadLine(), out int sifarisId))
+  {
+       Console.WriteLine("\nYanlis nomre!");
+       Console.ReadKey();
+         return;
+         }
+
+         _orderService.RemoveOrder(sifarisId);
+    Console.WriteLine("\nSifaris iptal edildi!");
+          }
+  catch (Exception ex)
+            {
+         Console.WriteLine($"\nXeta: {ex.Message}");
+          }
+
+      Console.ReadKey();
+        }
+
+        static async Task TarixAraligindaGoster()
+        {
+        Console.Clear();
+            Console.WriteLine("=== TARIX ARALIGI ===\n");
+
+       try
+        {
+    Console.Write("Baslangic tarixi (yyyy-MM-dd): ");
+     if (!DateTime.TryParse(Console.ReadLine(), out DateTime baslangic))
+    {
+          Console.WriteLine("\nYanlis tarix!");
+     Console.ReadKey();
+     return;
+                }
+
+      Console.Write("Son tarixi (yyyy-MM-dd): ");
+          if (!DateTime.TryParse(Console.ReadLine(), out DateTime son) || son < baslangic)
+         {
+     Console.WriteLine("\nYanlis tarix!");
+           Console.ReadKey();
+    return;
+      }
+
+  var sifarisler = await _orderService.GetOrderByDateIntervalAsync(baslangic, son);
+          Console.WriteLine($"\n{baslangic:yyyy-MM-dd} - {son:yyyy-MM-dd} araligi:\n");
+           if (!sifarisler.Any())
+                {
+      Console.WriteLine("Heç bir sifaris yoxdur!");
+                }
+          else
+                {
+           SifarisleriGoster(sifarisler);
+    }
+   }
+  catch (Exception ex)
+       {
+  Console.WriteLine($"Xeta: {ex.Message}");
+      }
+
+Console.ReadKey();
+        }
+
+  static async Task MueyeyenTarixde()
+   {
+       Console.Clear();
+      Console.WriteLine("=== MUEYYEN TARIXDE ===\n");
 
             try
-            {
-                var menuItems = await _menuItemService.GetAllMenuItemsAsync();
-                if (!menuItems.Any())
-                {
-                    Console.WriteLine("No menu items available.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                Console.WriteLine("Available items:");
-                ShowMenuItemsTable(menuItems);
-
-                var orderItems = new List<OrderItem>();
-
-                while (true)
-                {
-                    Console.Write("\nEnter item number (0 to finish): ");
-                    if (!int.TryParse(Console.ReadLine(), out int itemId) || itemId < 0)
-                    {
-                        Console.WriteLine("Invalid number format.");
-                        continue;
-                    }
-
-                    if (itemId == 0)
-                        break;
-
-                    var selectedItem = menuItems.FirstOrDefault(m => m.Id == itemId);
-                    if (selectedItem == null)
-                    {
-                        Console.WriteLine("Item not found.");
-                        continue;
-                    }
-
-                    Console.Write("Enter quantity: ");
-                    if (!int.TryParse(Console.ReadLine(), out int count) || count <= 0)
-                    {
-                        Console.WriteLine("Invalid quantity.");
-                        continue;
-                    }
-
-                    orderItems.Add(new OrderItem
-                    {
-                        MenuItemId = itemId,
-                        Count = count
-                    });
-
-                    Console.WriteLine("Item added to order.");
-                }
-
-                if (orderItems.Any())
-                {
-                    var order = new Order
-                    {
-                        OrderItems = orderItems,
-                        Date = DateTime.Now
-                    };
-
-                    _orderService.AddOrder(order);
-                    Console.WriteLine("\nOrder added successfully!");
-                }
-                else
-                {
-                    Console.WriteLine("\nNo items selected.");
-                }
+{
+        Console.Write("Tarix (yyyy-MM-dd): ");
+     if (!DateTime.TryParse(Console.ReadLine(), out DateTime tarix))
+        {
+    Console.WriteLine("\nYanlis tarix!");
+    Console.ReadKey();
+  return;
             }
-            catch (Exception ex)
+
+  var butunSifarisler = await _orderService.GetAllOrdersAsync();
+             var sifarisler = butunSifarisler.Where(o => o.Date.Date == tarix.Date).ToList();
+
+          Console.WriteLine($"\n{tarix:yyyy-MM-dd}:\n");
+   if (!sifarisler.Any())
+{
+Console.WriteLine("Heç bir sifaris yoxdur!");
+     }
+    else
+       {
+       SifarisleriGoster(sifarisler);
+      }
+            }
+   catch (Exception ex)
+        {
+      Console.WriteLine($"Xeta: {ex.Message}");
+          }
+
+      Console.ReadKey();
+        }
+
+        static async Task QiymetAraliginda()
+        {
+            Console.Clear();
+          Console.WriteLine("=== QIYMET ARALIGI ===\n");
+
+         try
+     {
+    Console.Write("Min: ");
+                if (!double.TryParse(Console.ReadLine(), out double min) || min < 0)
+       {
+       Console.WriteLine("\nYanlis meblagh!");
+        Console.ReadKey();
+ return;
+    }
+
+      Console.Write("Max: ");
+    if (!double.TryParse(Console.ReadLine(), out double max) || max < min)
+     {
+    Console.WriteLine("\nYanlis meblagh!");
+      Console.ReadKey();
+      return;
+                }
+
+             var sifarisler = await _orderService.GetOrdersByPriceIntervalAsync(min, max);
+         Console.WriteLine($"\n{min:F2} - {max:F2} araligi:\n");
+       if (!sifarisler.Any())
+     {
+         Console.WriteLine("Heç bir sifaris yoxdur!");
+    }
+           else
+   {
+           SifarisleriGoster(sifarisler);
+         }
+            }
+    catch (Exception ex)
             {
-                Console.WriteLine($"\nError: {ex.Message}");
+     Console.WriteLine($"Xeta: {ex.Message}");
             }
 
             Console.ReadKey();
         }
 
-        static async Task RemoveOrder()
+        static async Task SifarisNomresi()
         {
             Console.Clear();
-            Console.WriteLine("=== CANCEL ORDER ===\n");
+         Console.WriteLine("=== SIFARIS GOSTER ===\n");
 
             try
             {
-                Console.Write("Enter order number to cancel: ");
-                if (!int.TryParse(Console.ReadLine(), out int orderId))
-                {
-                    Console.WriteLine("\nInvalid number format.");
-                    Console.ReadKey();
-                    return;
-                }
+  Console.Write("Sifaris nomresi: ");
+       if (!int.TryParse(Console.ReadLine(), out int sifarisId))
+      {
+                  Console.WriteLine("\nYanlis nomre!");
+      Console.ReadKey();
+       return;
+ }
 
-                _orderService.RemoveOrder(orderId);
-                Console.WriteLine("\nOrder cancelled successfully!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"\nError: {ex.Message}");
-            }
-
-            Console.ReadKey();
-        }
-
-        static async Task GetOrdersByDateInterval()
+           var sifaris = await _orderService.GetOrderByIdAsync(sifarisId);
+      if (sifaris == null)
+    {
+                Console.WriteLine("\nSifaris tapilmadi!");
+   }
+    else
+              {
+              Console.WriteLine($"\nSifaris: {sifaris.Id}");
+       Console.WriteLine($"Tarix: {sifaris.Date:yyyy-MM-dd HH:mm:ss}");
+        Console.WriteLine($"Cemi: {sifaris.TotalPrice:F2}");
+      Console.WriteLine("\nItemler:");
+Console.WriteLine("Item | Sayi | Qiymet");
+                 Console.WriteLine("----------------------------");
+         if (sifaris.OrderItems != null)
         {
-            Console.Clear();
-            Console.WriteLine("=== ORDERS BY DATE RANGE ===\n");
-
-            try
-            {
-                Console.Write("Enter start date (yyyy-MM-dd): ");
-                if (!DateTime.TryParse(Console.ReadLine(), out DateTime startDate))
-                {
-                    Console.WriteLine("\nInvalid date format.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                Console.Write("Enter end date (yyyy-MM-dd): ");
-                if (!DateTime.TryParse(Console.ReadLine(), out DateTime endDate) || endDate < startDate)
-                {
-                    Console.WriteLine("\nInvalid date format.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                var orders = await _orderService.GetOrderByDateIntervalAsync(startDate, endDate);
-                Console.WriteLine($"\nOrders from {startDate:yyyy-MM-dd} to {endDate:yyyy-MM-dd}:\n");
-                if (!orders.Any())
-                {
-                    Console.WriteLine("No orders found in this date range.");
-                }
-                else
-                {
-                    ShowOrdersTable(orders);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-
-            Console.ReadKey();
-        }
-
-        static async Task GetOrdersByDate()
+              foreach (var item in sifaris.OrderItems)
         {
-            Console.Clear();
-            Console.WriteLine("=== ORDERS BY SPECIFIC DATE ===\n");
+  Console.WriteLine($"{item.MenuItem.Name} | {item.Count} | {item.MenuItem.Price:F2}");
+          }
+       }
+       }
+     }
+   catch (Exception ex)
+      {
+    Console.WriteLine($"Xeta: {ex.Message}");
+  }
 
-            try
-            {
-                Console.Write("Enter date (yyyy-MM-dd): ");
-                if (!DateTime.TryParse(Console.ReadLine(), out DateTime date))
-                {
-                    Console.WriteLine("\nInvalid date format.");
-                    Console.ReadKey();
-                    return;
-                }
+Console.ReadKey();
+  }
 
-                var allOrders = await _orderService.GetAllOrdersAsync();
-                var orders = allOrders.Where(o => o.Date.Date == date.Date).ToList();
-
-                Console.WriteLine($"\nOrders on {date:yyyy-MM-dd}:\n");
-                if (!orders.Any())
-                {
-                    Console.WriteLine("No orders found on this date.");
-                }
-                else
-                {
-                    ShowOrdersTable(orders);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-
-            Console.ReadKey();
-        }
-
-        static async Task GetOrdersByPriceInterval()
+   static void SifarisleriGoster(IEnumerable<Order> sifarisler)
         {
-            Console.Clear();
-            Console.WriteLine("=== ORDERS BY PRICE RANGE ===\n");
-
-            try
+        Console.WriteLine("Sifaris | Tarix | Cemi");
+      Console.WriteLine("----------------------------");
+        foreach (var sifaris in sifarisler)
             {
-                Console.Write("Enter minimum amount: ");
-                if (!double.TryParse(Console.ReadLine(), out double minAmount) || minAmount < 0)
-                {
-                    Console.WriteLine("\nInvalid amount format.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                Console.Write("Enter maximum amount: ");
-                if (!double.TryParse(Console.ReadLine(), out double maxAmount) || maxAmount < minAmount)
-                {
-                    Console.WriteLine("\nInvalid amount format.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                var orders = await _orderService.GetOrdersByPriceIntervalAsync(minAmount, maxAmount);
-                Console.WriteLine($"\nOrders in price range {minAmount:F2} - {maxAmount:F2}:\n");
-                if (!orders.Any())
-                {
-                    Console.WriteLine("No orders found in this price range.");
-                }
-                else
-                {
-                    ShowOrdersTable(orders);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-
-            Console.ReadKey();
-        }
-
-        static async Task GetOrderByNo()
-        {
-            Console.Clear();
-            Console.WriteLine("=== SHOW ORDER ===\n");
-
-            try
-            {
-                Console.Write("Enter order number: ");
-                if (!int.TryParse(Console.ReadLine(), out int orderId))
-                {
-                    Console.WriteLine("\nInvalid number format.");
-                    Console.ReadKey();
-                    return;
-                }
-
-                var order = await _orderService.GetOrderByIdAsync(orderId);
-                if (order == null)
-                {
-                    Console.WriteLine("\nOrder not found.");
-                }
-                else
-                {
-                    Console.WriteLine($"\nOrder Number: {order.Id}");
-                    Console.WriteLine($"Date: {order.Date:yyyy-MM-dd HH:mm:ss}");
-                    Console.WriteLine($"Total: {order.TotalPrice:F2}");
-                    Console.WriteLine("\nOrder Items:");
-                    Console.WriteLine("Item | Quantity | Price");
-                    Console.WriteLine("----------------------------");
-                    if (order.OrderItems != null)
-                    {
-                        foreach (var item in order.OrderItems)
-                        {
-                            Console.WriteLine($"{item.MenuItem.Name} | {item.Count} | {item.MenuItem.Price:F2}");
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-
-            Console.ReadKey();
-        }
-
-        static void ShowOrdersTable(IEnumerable<Order> orders)
-        {
-            Console.WriteLine("Order | Date | Total");
-            Console.WriteLine("----------------------------");
-            foreach (var order in orders)
-            {
-                Console.WriteLine($"{order.Id} | {order.Date:yyyy-MM-dd HH:mm} | {order.TotalPrice:F2}");
-            }
+    Console.WriteLine($"{sifaris.Id} | {sifaris.Date:yyyy-MM-dd HH:mm} | {sifaris.TotalPrice:F2}");
+     }
         }
     }
 }
