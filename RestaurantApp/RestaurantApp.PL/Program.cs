@@ -92,6 +92,7 @@ namespace RestaurantApp.PL
                 Console.WriteLine("5. Kategoriya boyu goster");
                 Console.WriteLine("6. Qiymet boyu goster");
                 Console.WriteLine("7. Axtar");
+                Console.WriteLine("8. Yeni kategoriya elave et");
                 Console.WriteLine("0. Geri");
                 Console.Write(Environment.NewLine + "Secim: ");
 
@@ -119,6 +120,9 @@ namespace RestaurantApp.PL
                         break;
                     case "7":
                         await AxtatItem();
+                        break;
+                    case "8":
+                        await YeniKategoriyaElave();
                         break;
                     case "0":
                         return;
@@ -765,6 +769,35 @@ namespace RestaurantApp.PL
             {
                 Console.WriteLine($"{sifaris.Id} | {sifaris.Date:yyyy-MM-dd HH:mm} | {sifaris.TotalPrice:F2}");
             }
+        }
+
+        static async Task YeniKategoriyaElave()
+        {
+            Console.Clear();
+            Console.WriteLine("=== YENI KATEGORIYA ELAVE ET ===");
+            Console.WriteLine();
+
+            try
+            {
+                Console.Write("Kategoriya adi: ");
+                string ad = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(ad))
+                {
+                    Console.WriteLine(Environment.NewLine + "Kategoriya adi bos ola bilmez!");
+                    Console.ReadKey();
+                    return;
+                }
+
+                await _categoryService.AddAsync(ad);
+                Console.WriteLine(Environment.NewLine + "Kategoriya elave edildi!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{Environment.NewLine}Xeta: {ex.Message}");
+            }
+
+            Console.ReadKey();
         }
     }
 }
