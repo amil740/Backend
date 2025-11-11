@@ -1,16 +1,16 @@
 using RestaurantApp.Core.Models;
+using RestaurantApp.Core.DTOs;
 
 namespace RestaurantApp.BLL.Interfaces
 {
     public interface IMenuItemService
     {
-        Task<IEnumerable<MenuItem>> GetAllMenuItemsAsync();
-        Task<IEnumerable<MenuItem>> GetMenuItemsByCategoryAsync(int categoryId);
+        Task<IEnumerable<MenuItemDto>> GetAllMenuItemsAsync();
+        Task<IEnumerable<MenuItemDto>> GetMenuItemsByCategoryAsync(int categoryId);
         Task AddAsync(string name, double price, int categoryId);
         Task RemoveAsync(int id);
         Task UpdateAsync(int id, string newName, double newPrice);
-        Task<List<MenuItem>> SearchAsync(string search);
-
-        Task<List<MenuItem>> GetByPriceIntervalAsync(double minPrice, double maxPrice);
+        Task<List<MenuItemDto>> SearchAsync(string search);
+        Task<List<MenuItemDto>> GetByPriceIntervalAsync(double minPrice, double maxPrice);
     }
 }

@@ -1,4 +1,5 @@
 using RestaurantApp.Core.Models;
+using RestaurantApp.Core.DTOs;
 
 namespace RestaurantApp.BLL.Interfaces
 {
@@ -6,10 +7,10 @@ namespace RestaurantApp.BLL.Interfaces
     {
         void AddOrder(Order order);
         void RemoveOrder(int orderId);
-        ValueTask<Order> GetOrderByIdAsync(int orderId);
-        Task<IEnumerable<Order>> GetAllOrdersAsync();
-        Task<List<Order>> GetOrdersByPriceIntervalAsync(double minAmount, double maxAmount);
-        Task<Order?> GetOrderByNoAsync(int orderNo);
-        Task<List<Order>> GetOrderByDateIntervalAsync(DateTime startDate, DateTime endDate);
+        ValueTask<OrderDto> GetOrderByIdAsync(int orderId);
+        Task<IEnumerable<OrderDto>> GetAllOrdersAsync();
+        Task<List<OrderDto>> GetOrdersByPriceIntervalAsync(double minAmount, double maxAmount);
+        Task<OrderDto?> GetOrderByNoAsync(int orderNo);
+        Task<List<OrderDto>> GetOrderByDateIntervalAsync(DateTime startDate, DateTime endDate);
     }
 }

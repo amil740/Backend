@@ -10,12 +10,12 @@ namespace RestaurantApp.DLL.Extensions
     {
         public static IServiceCollection AddDataLayerServices(this IServiceCollection services, string connectionString)
         {
-   services.AddDbContext<RestaurantDbContext>(options =>
-     options.UseSqlServer(connectionString));
+            services.AddDbContext<RestaurantDbContext>(options =>
+              options.UseSqlServer(connectionString));
 
-          services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             return services;
         }
- }
+    }
 }

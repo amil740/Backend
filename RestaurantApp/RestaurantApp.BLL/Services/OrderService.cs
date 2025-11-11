@@ -1,5 +1,7 @@
 using RestaurantApp.BLL.Interfaces;
+using RestaurantApp.BLL.Mappers;
 using RestaurantApp.Core.Models;
+using RestaurantApp.Core.DTOs;
 using RestaurantApp.Core.Interfaces;
 
 namespace RestaurantApp.BLL.Services
@@ -44,12 +46,13 @@ namespace RestaurantApp.BLL.Services
             await _orderRepository.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Order>> GetAllOrdersAsync()
+        public async Task<IEnumerable<OrderDto>> GetAllOrdersAsync()
         {
-            return await _orderRepository.GetAllAsync();
+            var orders = await _orderRepository.GetAllAsync();
+            return OrderMapper.ToDtoList(orders);
         }
 
-        public async Task<List<Order>> GetOrderByDateIntervalAsync(DateTime startDate, DateTime endDate)
+        public async Task<List<OrderDto>> GetOrderByDateIntervalAsync(DateTime startDate, DateTime endDate)
         {
             if (startDate > endDate)
             {
@@ -57,10 +60,10 @@ namespace RestaurantApp.BLL.Services
             }
 
             var orders = await _orderRepository.FindAsync(o => o.Date >= startDate && o.Date <= endDate);
-            return orders.ToList();
+            return OrderMapper.ToDtoList(orders);
         }
 
-        public async ValueTask<Order> GetOrderByIdAsync(int orderId)
+        public async ValueTask<OrderDto> GetOrderByIdAsync(int orderId)
         {
             if (orderId <= 0)
             {
@@ -73,20 +76,21 @@ namespace RestaurantApp.BLL.Services
                 throw new ArgumentException("Bele bir order yoxdur.", nameof(orderId));
             }
 
-            return order;
+            return OrderMapper.ToDto(order);
         }
 
-        public async Task<Order?> GetOrderByNoAsync(int orderNo)
+        public async Task<OrderDto?> GetOrderByNoAsync(int orderNo)
         {
             if (orderNo <= 0)
             {
                 throw new ArgumentException("Order nomresi 0-dan boyuk olmalidir.", nameof(orderNo));
             }
 
-            return await _orderRepository.FirstOrDefaultAsync(o => o.Id == orderNo);
+            var order = await _orderRepository.FirstOrDefaultAsync(o => o.Id == orderNo);
+            return OrderMapper.ToDto(order);
         }
 
-        public async Task<List<Order>> GetOrdersByPriceIntervalAsync(double minAmount, double maxAmount)
+        public async Task<List<OrderDto>> GetOrdersByPriceIntervalAsync(double minAmount, double maxAmount)
         {
             if (minAmount < 0 || maxAmount < 0)
             {
@@ -103,7 +107,7 @@ namespace RestaurantApp.BLL.Services
                 .Where(o => o.TotalPrice >= minAmount && o.TotalPrice <= maxAmount)
                 .ToList();
 
-            return filteredOrders;
+            return OrderMapper.ToDtoList(filteredOrders);
         }
 
         public async void RemoveOrder(int orderId)
