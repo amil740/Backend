@@ -3,60 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.bll\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|solutionrelative:restaurantapp.bll\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7DECC78-3857-A13F-CD5A-D342FE8BE3E4}|RestaurantApp.DLL\\RestaurantApp.DLL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.dll\\extensions\\serviceextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7DECC78-3857-A13F-CD5A-D342FE8BE3E4}|RestaurantApp.DLL\\RestaurantApp.DLL.csproj|solutionrelative:restaurantapp.dll\\extensions\\serviceextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C07B293A-B5C7-5B28-823E-A974BA5F90D6}|RestaurantApp.PL\\RestaurantApp.PL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.pl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C07B293A-B5C7-5B28-823E-A974BA5F90D6}|RestaurantApp.PL\\RestaurantApp.PL.csproj|solutionrelative:restaurantapp.pl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.bll\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|solutionrelative:restaurantapp.bll\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.bll\\services\\menuitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|solutionrelative:restaurantapp.bll\\services\\menuitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A3CBA32-5284-E67A-7F63-8C25B54E4AAF}|RestaurantApp.Core\\RestaurantApp.Core.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.core\\dtos\\updatemenuitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A3CBA32-5284-E67A-7F63-8C25B54E4AAF}|RestaurantApp.Core\\RestaurantApp.Core.csproj|solutionrelative:restaurantapp.core\\dtos\\updatemenuitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A3CBA32-5284-E67A-7F63-8C25B54E4AAF}|RestaurantApp.Core\\RestaurantApp.Core.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.core\\dtos\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A3CBA32-5284-E67A-7F63-8C25B54E4AAF}|RestaurantApp.Core\\RestaurantApp.Core.csproj|solutionrelative:restaurantapp.core\\dtos\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A3CBA32-5284-E67A-7F63-8C25B54E4AAF}|RestaurantApp.Core\\RestaurantApp.Core.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.core\\dtos\\menuitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A3CBA32-5284-E67A-7F63-8C25B54E4AAF}|RestaurantApp.Core\\RestaurantApp.Core.csproj|solutionrelative:restaurantapp.core\\dtos\\menuitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A3CBA32-5284-E67A-7F63-8C25B54E4AAF}|RestaurantApp.Core\\RestaurantApp.Core.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.core\\dtos\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A3CBA32-5284-E67A-7F63-8C25B54E4AAF}|RestaurantApp.Core\\RestaurantApp.Core.csproj|solutionrelative:restaurantapp.core\\dtos\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A3CBA32-5284-E67A-7F63-8C25B54E4AAF}|RestaurantApp.Core\\RestaurantApp.Core.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.core\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A3CBA32-5284-E67A-7F63-8C25B54E4AAF}|RestaurantApp.Core\\RestaurantApp.Core.csproj|solutionrelative:restaurantapp.core\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A3CBA32-5284-E67A-7F63-8C25B54E4AAF}|RestaurantApp.Core\\RestaurantApp.Core.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.core\\dtos\\createmenuitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A3CBA32-5284-E67A-7F63-8C25B54E4AAF}|RestaurantApp.Core\\RestaurantApp.Core.csproj|solutionrelative:restaurantapp.core\\dtos\\createmenuitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A3CBA32-5284-E67A-7F63-8C25B54E4AAF}|RestaurantApp.Core\\RestaurantApp.Core.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.core\\dtos\\createcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A3CBA32-5284-E67A-7F63-8C25B54E4AAF}|RestaurantApp.Core\\RestaurantApp.Core.csproj|solutionrelative:restaurantapp.core\\dtos\\createcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.bll\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|solutionrelative:restaurantapp.bll\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\restaurantapp\\restaurantapp.bll\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74BCD3E1-A39A-1DE8-8C7D-5E20D9EB2B04}|RestaurantApp.BLL\\RestaurantApp.BLL.csproj|solutionrelative:restaurantapp.bll\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,184 +30,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CreateCategoryDto.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.Core\\DTOs\\CreateCategoryDto.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.Core\\DTOs\\CreateCategoryDto.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.Core\\DTOs\\CreateCategoryDto.cs",
-              "RelativeToolTip": "RestaurantApp.Core\\DTOs\\CreateCategoryDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T17:43:43.472Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UpdateMenuItemDto.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.Core\\DTOs\\UpdateMenuItemDto.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.Core\\DTOs\\UpdateMenuItemDto.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.Core\\DTOs\\UpdateMenuItemDto.cs",
-              "RelativeToolTip": "RestaurantApp.Core\\DTOs\\UpdateMenuItemDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T17:43:34.591Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CreateMenuItemDto.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.Core\\DTOs\\CreateMenuItemDto.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.Core\\DTOs\\CreateMenuItemDto.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.Core\\DTOs\\CreateMenuItemDto.cs",
-              "RelativeToolTip": "RestaurantApp.Core\\DTOs\\CreateMenuItemDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T17:43:28.956Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "OrderDto.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.Core\\DTOs\\OrderDto.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.Core\\DTOs\\OrderDto.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.Core\\DTOs\\OrderDto.cs",
-              "RelativeToolTip": "RestaurantApp.Core\\DTOs\\OrderDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T17:43:22.978Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "OrderItemDto.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.Core\\DTOs\\OrderItemDto.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.Core\\DTOs\\OrderItemDto.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.Core\\DTOs\\OrderItemDto.cs",
-              "RelativeToolTip": "RestaurantApp.Core\\DTOs\\OrderItemDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T17:43:16.203Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MenuItemDto.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.Core\\DTOs\\MenuItemDto.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.Core\\DTOs\\MenuItemDto.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.Core\\DTOs\\MenuItemDto.cs",
-              "RelativeToolTip": "RestaurantApp.Core\\DTOs\\MenuItemDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T17:43:09.747Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CategoryDto.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.Core\\DTOs\\CategoryDto.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.Core\\DTOs\\CategoryDto.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.Core\\DTOs\\CategoryDto.cs",
-              "RelativeToolTip": "RestaurantApp.Core\\DTOs\\CategoryDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T17:43:03.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "MenuItemService.cs",
               "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Services\\MenuItemService.cs",
               "RelativeDocumentMoniker": "RestaurantApp.BLL\\Services\\MenuItemService.cs",
               "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Services\\MenuItemService.cs",
               "RelativeToolTip": "RestaurantApp.BLL\\Services\\MenuItemService.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAmwJYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAASwJEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T16:50:59.383Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Services\\CategoryService.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.BLL\\Services\\CategoryService.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Services\\CategoryService.cs",
-              "RelativeToolTip": "RestaurantApp.BLL\\Services\\CategoryService.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAmwHEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T16:49:29.104Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.PL\\Program.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.PL\\Program.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.PL\\Program.cs",
-              "RelativeToolTip": "RestaurantApp.PL\\Program.cs",
-              "ViewState": "AgIAACYDAAAAAAAAAAAgwDcDAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T18:40:27.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ServiceExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.DLL\\Extensions\\ServiceExtensions.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.DLL\\Extensions\\ServiceExtensions.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.DLL\\Extensions\\ServiceExtensions.cs",
-              "RelativeToolTip": "RestaurantApp.DLL\\Extensions\\ServiceExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T18:40:17.968Z",
+              "WhenOpened": "2025-11-12T13:15:10.224Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ICategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Interfaces\\ICategoryService.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.BLL\\Interfaces\\ICategoryService.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Interfaces\\ICategoryService.cs",
-              "RelativeToolTip": "RestaurantApp.BLL\\Interfaces\\ICategoryService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAswA8AAAAAAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.PL\\Program.cs",
+              "RelativeDocumentMoniker": "RestaurantApp.PL\\Program.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.PL\\Program.cs",
+              "RelativeToolTip": "RestaurantApp.PL\\Program.cs",
+              "ViewState": "AgIAAN0AAAAAAAAAAAAgwPYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T18:42:02.625Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IOrderService.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Interfaces\\IOrderService.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.BLL\\Interfaces\\IOrderService.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Interfaces\\IOrderService.cs",
-              "RelativeToolTip": "RestaurantApp.BLL\\Interfaces\\IOrderService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAowBAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T12:56:10.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "OrderService.cs",
-              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Services\\OrderService.cs",
-              "RelativeDocumentMoniker": "RestaurantApp.BLL\\Services\\OrderService.cs",
-              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\RestaurantApp\\RestaurantApp.BLL\\Services\\OrderService.cs",
-              "RelativeToolTip": "RestaurantApp.BLL\\Services\\OrderService.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAiwIIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T12:24:02.032Z",
+              "WhenOpened": "2025-11-12T12:10:18.742Z",
               "EditorCaption": ""
             }
           ]
