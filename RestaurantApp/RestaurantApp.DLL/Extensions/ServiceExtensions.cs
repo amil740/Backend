@@ -14,6 +14,7 @@ namespace RestaurantApp.DLL.Extensions
               options.UseSqlServer(connectionString));
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IOrderRepository, OrderRepository>();
 
             return services;
         }

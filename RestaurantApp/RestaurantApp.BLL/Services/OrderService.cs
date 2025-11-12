@@ -8,14 +8,14 @@ namespace RestaurantApp.BLL.Services
 {
     public class OrderService : IOrderService
     {
-        private readonly IGenericRepository<Order> _orderRepository;
+        private readonly IOrderRepository _orderRepository;
 
-        public OrderService(IGenericRepository<Order> orderRepository)
+        public OrderService(IOrderRepository orderRepository)
         {
             _orderRepository = orderRepository;
         }
 
-        public async void AddOrder(Order order)
+        public async Task AddOrder(Order order)
         {
             if (order == null)
             {
@@ -29,9 +29,9 @@ namespace RestaurantApp.BLL.Services
 
             foreach (var orderItem in order.OrderItems)
             {
-                if (orderItem.MenuItem == null)
+                if (orderItem.MenuItemId <= 0)
                 {
-                    throw new ArgumentException("Order item-de menu item null ola bilmez.");
+                    throw new ArgumentException("Order item-de menu item ID duzgun olmalidir.");
                 }
 
                 if (orderItem.Count <= 0)
@@ -48,7 +48,7 @@ namespace RestaurantApp.BLL.Services
 
         public async Task<IEnumerable<OrderDto>> GetAllOrdersAsync()
         {
-            var orders = await _orderRepository.GetAllAsync();
+            var orders = await _orderRepository.GetAllWithDetailsAsync();
             return OrderMapper.ToDtoList(orders);
         }
 
@@ -59,7 +59,7 @@ namespace RestaurantApp.BLL.Services
                 throw new ArgumentException("Baslangic tarixi bitme tarixinden boyuk ola bilmez.");
             }
 
-            var orders = await _orderRepository.FindAsync(o => o.Date >= startDate && o.Date <= endDate);
+            var orders = await _orderRepository.FindWithDetailsAsync(o => o.Date >= startDate && o.Date <= endDate);
             return OrderMapper.ToDtoList(orders);
         }
 
@@ -70,7 +70,7 @@ namespace RestaurantApp.BLL.Services
                 throw new ArgumentException("Order ID 0-dan boyuk olmalidir.", nameof(orderId));
             }
 
-            var order = await _orderRepository.GetByIdAsync(orderId);
+            var order = await _orderRepository.GetByIdWithDetailsAsync(orderId);
             if (order == null)
             {
                 throw new ArgumentException("Bele bir order yoxdur.", nameof(orderId));
@@ -86,7 +86,7 @@ namespace RestaurantApp.BLL.Services
                 throw new ArgumentException("Order nomresi 0-dan boyuk olmalidir.", nameof(orderNo));
             }
 
-            var order = await _orderRepository.FirstOrDefaultAsync(o => o.Id == orderNo);
+            var order = await _orderRepository.GetByIdWithDetailsAsync(orderNo);
             return OrderMapper.ToDto(order);
         }
 
@@ -102,7 +102,7 @@ namespace RestaurantApp.BLL.Services
                 throw new ArgumentException("Minimum mebleg maksimum meblegden boyuk ola bilmez.");
             }
 
-            var allOrders = await _orderRepository.GetAllAsync();
+            var allOrders = await _orderRepository.GetAllWithDetailsAsync();
             var filteredOrders = allOrders
                 .Where(o => o.TotalPrice >= minAmount && o.TotalPrice <= maxAmount)
                 .ToList();
@@ -110,7 +110,7 @@ namespace RestaurantApp.BLL.Services
             return OrderMapper.ToDtoList(filteredOrders);
         }
 
-        public async void RemoveOrder(int orderId)
+        public async Task RemoveOrder(int orderId)
         {
             if (orderId <= 0)
             {

@@ -54,7 +54,18 @@ namespace RestaurantApp.BLL.Services
         public async Task<IEnumerable<MenuItemDto>> GetAllMenuItemsAsync()
         {
             var menuItems = await _menuItemRepository.GetAllAsync();
-            return MenuItemMapper.ToDtoList(menuItems);
+            var categories = await _categoryRepository.GetAllAsync();
+
+            var menuItemDtos = menuItems.Select(item => new MenuItemDto
+            {
+                Id = item.Id,
+                Name = item.Name,
+                Price = item.Price,
+                CategoryId = item.CategoryId,
+                CategoryName = categories.FirstOrDefault(c => c.Id == item.CategoryId)?.Name
+            }).ToList();
+
+            return menuItemDtos;
         }
 
         public async Task<List<MenuItemDto>> GetByPriceIntervalAsync(double minPrice, double maxPrice)
@@ -65,12 +76,21 @@ namespace RestaurantApp.BLL.Services
             }
 
             var items = await _menuItemRepository.GetAllAsync();
+            var categories = await _categoryRepository.GetAllAsync();
 
             var filteredItems = items
                 .Where(x => x.Price >= minPrice && x.Price <= maxPrice)
-              .ToList();
+                .Select(item => new MenuItemDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Price = item.Price,
+                    CategoryId = item.CategoryId,
+                    CategoryName = categories.FirstOrDefault(c => c.Id == item.CategoryId)?.Name
+                })
+                .ToList();
 
-            return MenuItemMapper.ToDtoList(filteredItems);
+            return filteredItems;
         }
 
         public async Task<IEnumerable<MenuItemDto>> GetMenuItemsByCategoryAsync(int categoryId)
@@ -82,7 +102,17 @@ namespace RestaurantApp.BLL.Services
             }
 
             var menuItems = await _menuItemRepository.FindAsync(item => item.CategoryId == categoryId);
-            return MenuItemMapper.ToDtoList(menuItems);
+
+            var menuItemDtos = menuItems.Select(item => new MenuItemDto
+            {
+                Id = item.Id,
+                Name = item.Name,
+                Price = item.Price,
+                CategoryId = item.CategoryId,
+                CategoryName = category.Name
+            }).ToList();
+
+            return menuItemDtos;
         }
 
         public async Task RemoveAsync(int id)
@@ -102,13 +132,30 @@ namespace RestaurantApp.BLL.Services
             if (string.IsNullOrWhiteSpace(search))
             {
                 var allItems = await _menuItemRepository.GetAllAsync();
-                return MenuItemMapper.ToDtoList(allItems);
+                var allCategories = await _categoryRepository.GetAllAsync();
+
+                return allItems.Select(item => new MenuItemDto
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Price = item.Price,
+                    CategoryId = item.CategoryId,
+                    CategoryName = allCategories.FirstOrDefault(c => c.Id == item.CategoryId)?.Name
+                }).ToList();
             }
 
             var items = await _menuItemRepository.FindAsync(item =>
-             item.Name.ToLower().Contains(search.ToLower()));
+                item.Name.ToLower().Contains(search.ToLower()));
+            var categories = await _categoryRepository.GetAllAsync();
 
-            return MenuItemMapper.ToDtoList(items);
+            return items.Select(item => new MenuItemDto
+            {
+                Id = item.Id,
+                Name = item.Name,
+                Price = item.Price,
+                CategoryId = item.CategoryId,
+                CategoryName = categories.FirstOrDefault(c => c.Id == item.CategoryId)?.Name
+            }).ToList();
         }
 
         public async Task UpdateAsync(int id, string newName, double newPrice)

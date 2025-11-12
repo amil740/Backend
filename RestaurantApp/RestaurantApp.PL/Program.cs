@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using RestaurantApp.BLL.Extensions;
 using RestaurantApp.BLL.Interfaces;
@@ -12,9 +12,6 @@ namespace RestaurantApp.PL
     internal class Program
     {
         private static IServiceProvider _serviceProvider;
-        private static ICategoryService _categoryService;
-        private static IMenuItemService _menuItemService;
-        private static IOrderService _orderService;
 
         static async Task Main(string[] args)
         {
@@ -28,7 +25,8 @@ namespace RestaurantApp.PL
 
             try
             {
-                var context = _serviceProvider.GetRequiredService<RestaurantDbContext>();
+                using var scope = _serviceProvider.CreateScope();
+                var context = scope.ServiceProvider.GetRequiredService<RestaurantDbContext>();
                 context.Database.Migrate();
                 Console.WriteLine("Baza ugurla baglandi!");
                 Console.WriteLine("Migrasyonlar tetbiq edildi!");
@@ -38,10 +36,6 @@ namespace RestaurantApp.PL
                 Console.WriteLine($"Baza baglanmadi: {ex.Message}");
                 return;
             }
-
-            _categoryService = _serviceProvider.GetRequiredService<ICategoryService>();
-            _menuItemService = _serviceProvider.GetRequiredService<IMenuItemService>();
-            _orderService = _serviceProvider.GetRequiredService<IOrderService>();
 
             await AnaMenusu();
         }
@@ -93,6 +87,7 @@ namespace RestaurantApp.PL
                 Console.WriteLine("5. Kateqoriyasina gore menu itemlari goster");
                 Console.WriteLine("6. Qiymet araligina gore menu itemlar goster");
                 Console.WriteLine("7. Menu itemlar arasinda ada gore axtar");
+                Console.WriteLine("8. Kategoriya elave et");
                 Console.WriteLine("0. Evvelki menuya qayit");
                 Console.Write(Environment.NewLine + "Secininiz: ");
 
@@ -120,6 +115,9 @@ namespace RestaurantApp.PL
                         break;
                     case "7":
                         await AxtatItem();
+                        break;
+                    case "8":
+                        await KategoriyaElave();
                         break;
                     case "0":
                         return;
@@ -191,6 +189,10 @@ namespace RestaurantApp.PL
 
             try
             {
+                using var scope = _serviceProvider.CreateScope();
+                var menuItemService = scope.ServiceProvider.GetRequiredService<IMenuItemService>();
+                var categoryService = scope.ServiceProvider.GetRequiredService<ICategoryService>();
+
                 Console.Write("Item adi: ");
                 string ad = Console.ReadLine();
 
@@ -209,7 +211,7 @@ namespace RestaurantApp.PL
                     return;
                 }
 
-                var kategoriyalar = await _categoryService.GetAllCategoriesAsync();
+                var kategoriyalar = await categoryService.GetAllCategoriesAsync();
                 if (!kategoriyalar.Any())
                 {
                     Console.WriteLine(Environment.NewLine + "Hec bir kateqoriya yoxdur!");
@@ -233,7 +235,7 @@ namespace RestaurantApp.PL
                 }
 
                 var seciliKat = katList[katIndex - 1];
-                await _menuItemService.AddAsync(ad, qiymet, seciliKat.Id);
+                await menuItemService.AddAsync(ad, qiymet, seciliKat.Id);
                 Console.WriteLine(Environment.NewLine + "Item elave edildi!");
             }
             catch (Exception ex)
@@ -252,6 +254,9 @@ namespace RestaurantApp.PL
 
             try
             {
+                using var scope = _serviceProvider.CreateScope();
+                var menuItemService = scope.ServiceProvider.GetRequiredService<IMenuItemService>();
+
                 Console.Write("Duzelis edilecek item nomresi: ");
                 if (!int.TryParse(Console.ReadLine(), out int id))
                 {
@@ -260,7 +265,7 @@ namespace RestaurantApp.PL
                     return;
                 }
 
-                var butunItemler = await _menuItemService.GetAllMenuItemsAsync();
+                var butunItemler = await menuItemService.GetAllMenuItemsAsync();
                 var item = butunItemler.FirstOrDefault(m => m.Id == id);
                 if (item == null)
                 {
@@ -287,7 +292,7 @@ namespace RestaurantApp.PL
                     return;
                 }
 
-                await _menuItemService.UpdateAsync(id, yeniAd, yeniQiymet);
+                await menuItemService.UpdateAsync(id, yeniAd, yeniQiymet);
                 Console.WriteLine(Environment.NewLine + "Item duzeldildi!");
             }
             catch (Exception ex)
@@ -306,6 +311,9 @@ namespace RestaurantApp.PL
 
             try
             {
+                using var scope = _serviceProvider.CreateScope();
+                var menuItemService = scope.ServiceProvider.GetRequiredService<IMenuItemService>();
+
                 Console.Write("Silinecek item nomresi: ");
                 if (!int.TryParse(Console.ReadLine(), out int id))
                 {
@@ -314,7 +322,7 @@ namespace RestaurantApp.PL
                     return;
                 }
 
-                await _menuItemService.RemoveAsync(id);
+                await menuItemService.RemoveAsync(id);
                 Console.WriteLine(Environment.NewLine + "Item silindi!");
             }
             catch (Exception ex)
@@ -327,13 +335,15 @@ namespace RestaurantApp.PL
 
         static async Task ButunItemleriGoster()
         {
-            Console.Clear();
             Console.WriteLine("=== BUTUN ITEMLAR ===");
             Console.WriteLine();
 
             try
             {
-                var itemler = await _menuItemService.GetAllMenuItemsAsync();
+                using var scope = _serviceProvider.CreateScope();
+                var menuItemService = scope.ServiceProvider.GetRequiredService<IMenuItemService>();
+
+                var itemler = await menuItemService.GetAllMenuItemsAsync();
                 if (!itemler.Any())
                 {
                     Console.WriteLine("Hec bir item yoxdur!");
@@ -359,7 +369,11 @@ namespace RestaurantApp.PL
 
             try
             {
-                var kategoriyalar = await _categoryService.GetAllCategoriesAsync();
+                using var scope = _serviceProvider.CreateScope();
+                var menuItemService = scope.ServiceProvider.GetRequiredService<IMenuItemService>();
+                var categoryService = scope.ServiceProvider.GetRequiredService<ICategoryService>();
+
+                var kategoriyalar = await categoryService.GetAllCategoriesAsync();
                 if (!kategoriyalar.Any())
                 {
                     Console.WriteLine("Hec bir kateqoriya yoxdur!");
@@ -383,7 +397,7 @@ namespace RestaurantApp.PL
                 }
 
                 var seciliKat = katList[katIndex - 1];
-                var itemler = await _menuItemService.GetMenuItemsByCategoryAsync(seciliKat.Id);
+                var itemler = await menuItemService.GetMenuItemsByCategoryAsync(seciliKat.Id);
 
                 Console.WriteLine($"{Environment.NewLine}'{seciliKat.Name}' kateqoriyasinda itemler:");
                 Console.WriteLine();
@@ -412,6 +426,9 @@ namespace RestaurantApp.PL
 
             try
             {
+                using var scope = _serviceProvider.CreateScope();
+                var menuItemService = scope.ServiceProvider.GetRequiredService<IMenuItemService>();
+
                 Console.Write("Minimum qiymet: ");
                 if (!double.TryParse(Console.ReadLine(), out double minQiymet) || minQiymet < 0)
                 {
@@ -428,7 +445,7 @@ namespace RestaurantApp.PL
                     return;
                 }
 
-                var itemler = await _menuItemService.GetByPriceIntervalAsync(minQiymet, maxQiymet);
+                var itemler = await menuItemService.GetByPriceIntervalAsync(minQiymet, maxQiymet);
                 Console.WriteLine($"{Environment.NewLine}{minQiymet:F2} - {maxQiymet:F2} araligi:");
                 Console.WriteLine();
                 if (!itemler.Any())
@@ -456,6 +473,9 @@ namespace RestaurantApp.PL
 
             try
             {
+                using var scope = _serviceProvider.CreateScope();
+                var menuItemService = scope.ServiceProvider.GetRequiredService<IMenuItemService>();
+
                 Console.Write("Axtarish metni: ");
                 string axtar = Console.ReadLine();
 
@@ -466,7 +486,7 @@ namespace RestaurantApp.PL
                     return;
                 }
 
-                var itemler = await _menuItemService.SearchAsync(axtar);
+                var itemler = await menuItemService.SearchAsync(axtar);
                 Console.WriteLine($"{Environment.NewLine}'{axtar}' ucun neticeler:");
                 Console.WriteLine();
                 if (!itemler.Any())
@@ -481,6 +501,38 @@ namespace RestaurantApp.PL
             catch (Exception ex)
             {
                 Console.WriteLine($"Xeta: {ex.Message}");
+            }
+
+            Console.ReadKey();
+        }
+
+        static async Task KategoriyaElave()
+        {
+            Console.Clear();
+            Console.WriteLine("=== KATEGORIYA ELAVE ET ===");
+            Console.WriteLine();
+
+            try
+            {
+                using var scope = _serviceProvider.CreateScope();
+                var categoryService = scope.ServiceProvider.GetRequiredService<ICategoryService>();
+
+                Console.Write("Kategoriya adi: ");
+                string ad = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(ad))
+                {
+                    Console.WriteLine(Environment.NewLine + "Kategoriya adi bosh ola bilmez!");
+                    Console.ReadKey();
+                    return;
+                }
+
+                await categoryService.AddAsync(ad);
+                Console.WriteLine(Environment.NewLine + "Kategoriya elave edildi!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{Environment.NewLine}Xeta: {ex.Message}");
             }
 
             Console.ReadKey();
@@ -504,7 +556,11 @@ namespace RestaurantApp.PL
 
             try
             {
-                var menuItemler = await _menuItemService.GetAllMenuItemsAsync();
+                using var scope = _serviceProvider.CreateScope();
+                var menuItemService = scope.ServiceProvider.GetRequiredService<IMenuItemService>();
+                var orderService = scope.ServiceProvider.GetRequiredService<IOrderService>();
+
+                var menuItemler = await menuItemService.GetAllMenuItemsAsync();
                 if (!menuItemler.Any())
                 {
                     Console.WriteLine("Hec bir item yoxdur!");
@@ -547,13 +603,6 @@ namespace RestaurantApp.PL
                     sifarisItemleri.Add(new OrderItem
                     {
                         MenuItemId = itemId,
-                        MenuItem = new MenuItem
-                        {
-                            Id = seciliItem.Id,
-                            Name = seciliItem.Name,
-                            Price = seciliItem.Price,
-                            CategoryId = seciliItem.CategoryId
-                        },
                         Count = sayi
                     });
 
@@ -568,7 +617,7 @@ namespace RestaurantApp.PL
                         Date = DateTime.Now
                     };
 
-                    _orderService.AddOrder(sifaris);
+                    await orderService.AddOrder(sifaris);
                     Console.WriteLine(Environment.NewLine + "Sifaris ugurla elave edildi!");
                 }
                 else
@@ -592,6 +641,9 @@ namespace RestaurantApp.PL
 
             try
             {
+                using var scope = _serviceProvider.CreateScope();
+                var orderService = scope.ServiceProvider.GetRequiredService<IOrderService>();
+
                 Console.Write("Legv edilecek sifaris nomresi: ");
                 if (!int.TryParse(Console.ReadLine(), out int sifarisId))
                 {
@@ -600,7 +652,7 @@ namespace RestaurantApp.PL
                     return;
                 }
 
-                _orderService.RemoveOrder(sifarisId);
+                await orderService.RemoveOrder(sifarisId);
                 Console.WriteLine(Environment.NewLine + "Sifaris legv edildi!");
             }
             catch (Exception ex)
@@ -619,7 +671,10 @@ namespace RestaurantApp.PL
 
             try
             {
-                var sifarisler = await _orderService.GetAllOrdersAsync();
+                using var scope = _serviceProvider.CreateScope();
+                var orderService = scope.ServiceProvider.GetRequiredService<IOrderService>();
+
+                var sifarisler = await orderService.GetAllOrdersAsync();
                 if (!sifarisler.Any())
                 {
                     Console.WriteLine("Hec bir sifaris yoxdur!");
@@ -645,6 +700,9 @@ namespace RestaurantApp.PL
 
             try
             {
+                using var scope = _serviceProvider.CreateScope();
+                var orderService = scope.ServiceProvider.GetRequiredService<IOrderService>();
+
                 Console.Write("Bashlangic tarixi (yyyy-MM-dd): ");
                 if (!DateTime.TryParse(Console.ReadLine(), out DateTime baslangic))
                 {
@@ -656,12 +714,12 @@ namespace RestaurantApp.PL
                 Console.Write("Son tarix (yyyy-MM-dd): ");
                 if (!DateTime.TryParse(Console.ReadLine(), out DateTime son) || son < baslangic)
                 {
-                    Console.WriteLine(Environment.NewLine + "Yanlish tarix formati!");
+                    Console.WriteLine(Environment.NewLine + "Yanlish tarik formati!");
                     Console.ReadKey();
                     return;
                 }
 
-                var sifarisler = await _orderService.GetOrderByDateIntervalAsync(baslangic, son);
+                var sifarisler = await orderService.GetOrderByDateIntervalAsync(baslangic, son);
                 Console.WriteLine($"{Environment.NewLine}{baslangic:yyyy-MM-dd} - {son:yyyy-MM-dd} araligindaki sifarishler:");
                 Console.WriteLine();
                 if (!sifarisler.Any())
@@ -689,6 +747,9 @@ namespace RestaurantApp.PL
 
             try
             {
+                using var scope = _serviceProvider.CreateScope();
+                var orderService = scope.ServiceProvider.GetRequiredService<IOrderService>();
+
                 Console.Write("Tarix (yyyy-MM-dd): ");
                 if (!DateTime.TryParse(Console.ReadLine(), out DateTime tarix))
                 {
@@ -697,7 +758,7 @@ namespace RestaurantApp.PL
                     return;
                 }
 
-                var butunSifarisler = await _orderService.GetAllOrdersAsync();
+                var butunSifarisler = await orderService.GetAllOrdersAsync();
                 var sifarisler = butunSifarisler.Where(o => o.Date.Date == tarix.Date).ToList();
 
                 Console.WriteLine($"{Environment.NewLine}{tarix:yyyy-MM-dd} tarixindeki sifarishler:");
@@ -727,6 +788,9 @@ namespace RestaurantApp.PL
 
             try
             {
+                using var scope = _serviceProvider.CreateScope();
+                var orderService = scope.ServiceProvider.GetRequiredService<IOrderService>();
+
                 Console.Write("Minimum mebleg: ");
                 if (!double.TryParse(Console.ReadLine(), out double min) || min < 0)
                 {
@@ -743,7 +807,7 @@ namespace RestaurantApp.PL
                     return;
                 }
 
-                var sifarisler = await _orderService.GetOrdersByPriceIntervalAsync(min, max);
+                var sifarisler = await orderService.GetOrdersByPriceIntervalAsync(min, max);
                 Console.WriteLine($"{Environment.NewLine}{min:F2} - {max:F2} araligindaki sifarishler:");
                 Console.WriteLine();
                 if (!sifarisler.Any())
@@ -771,6 +835,9 @@ namespace RestaurantApp.PL
 
             try
             {
+                using var scope = _serviceProvider.CreateScope();
+                var orderService = scope.ServiceProvider.GetRequiredService<IOrderService>();
+
                 Console.Write("Sifaris nomresi: ");
                 if (!int.TryParse(Console.ReadLine(), out int sifarisId))
                 {
@@ -779,7 +846,7 @@ namespace RestaurantApp.PL
                     return;
                 }
 
-                var sifaris = await _orderService.GetOrderByIdAsync(sifarisId);
+                var sifaris = await orderService.GetOrderByIdAsync(sifarisId);
                 if (sifaris == null)
                 {
                     Console.WriteLine(Environment.NewLine + "Sifaris tapilmadi!");

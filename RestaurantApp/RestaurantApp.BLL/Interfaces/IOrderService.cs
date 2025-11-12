@@ -5,8 +5,8 @@ namespace RestaurantApp.BLL.Interfaces
 {
     public interface IOrderService
     {
-        void AddOrder(Order order);
-        void RemoveOrder(int orderId);
+        Task AddOrder(Order order);
+        Task RemoveOrder(int orderId);
         ValueTask<OrderDto> GetOrderByIdAsync(int orderId);
         Task<IEnumerable<OrderDto>> GetAllOrdersAsync();
         Task<List<OrderDto>> GetOrdersByPriceIntervalAsync(double minAmount, double maxAmount);
