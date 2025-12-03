@@ -1,0 +1,23 @@
+﻿@using WebApplication1.Models
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Student Information</h1>
+
+@{
+    if (ViewData["Student"] != null)
+    {
+      var student = (Student)ViewData["Student"];
+        <div>
+        <p><strong>ID:</strong> @student.Id</p>
+      <p><strong>Name:</strong> @student.Name</p>
+       <p><strong>Age:</strong> @student.Age</p>
+   </div>
+    }
+    else
+    {
+        <p>No student data available.</p>
+    }
+}
