@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Eterna.Models;
-using Pustok.Models;
 
 namespace Eterna.Data
 {
