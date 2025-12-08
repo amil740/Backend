@@ -1,0 +1,57 @@
+﻿using System.Net.Http.Headers;
+using System.Text;
+using System.Text.Json;
+using Microsoft.Extensions.Configuration;
+
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json")
+    .Build();
+
+var apiKey = configuration["OpenAI:ApiKey"];
+
+Console.WriteLine("🔍 Testing OpenAI API Key...\n");
+Console.WriteLine($"API Key (first 20 chars): {apiKey?.Substring(0, Math.Min(20, apiKey.Length))}...\n");
+
+using var client = new HttpClient();
+client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+
+try
+{
+    // Test with a simple models list request
+    Console.WriteLine("📡 Sending test request to OpenAI...\n");
+    var response = await client.GetAsync("https://api.openai.com/v1/models");
+    var content = await response.Content.ReadAsStringAsync();
+    
+    Console.WriteLine($"Status Code: {response.StatusCode}\n");
+    
+    if (response.IsSuccessStatusCode)
+    {
+        Console.WriteLine("✅ SUCCESS! Your API key is working correctly!\n");
+        Console.WriteLine("You can now use the application.\n");
+    }
+    else
+    {
+        Console.WriteLine("❌ ERROR! API key is not working.\n");
+        Console.WriteLine($"Response: {content}\n");
+        
+        if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+        {
+            Console.WriteLine("⚠️  PROBLEM: Invalid API Key");
+            Console.WriteLine("   Solution: Get a new API key from https://platform.openai.com/api-keys\n");
+        }
+        else if (response.StatusCode == System.Net.HttpStatusCode.TooManyRequests)
+        {
+            Console.WriteLine("⚠️  PROBLEM: Rate limit exceeded or no credits");
+            Console.WriteLine("   Solution: Add credits at https://platform.openai.com/account/billing\n");
+        }
+    }
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"❌ ERROR: {ex.Message}\n");
+    Console.WriteLine("Check your internet connection.\n");
+}
+
+Console.WriteLine("Press any key to exit...");
+Console.ReadKey();

@@ -1,0 +1,134 @@
+﻿using System.Linq.Expressions;
+using System;
+using HRManagementApp.Models;
+using HRManagementApp.Services;
+using HRManagementApp.Interfaces;
+
+Console.WriteLine("---------MAIN MENU----------");
+HumanResourceManagerService hrm = new HumanResourceManagerService();
+string command = "";
+string departmentName = "";
+while (true)
+    Console.WriteLine("-------Main Menu-------");
+    Console.WriteLine("1- Add Employee");
+    Console.WriteLine("2- Edit Employee");
+    Console.WriteLine("3-Get Departments");
+    Console.WriteLine("4-Add Department");
+    Console.WriteLine("5-Edit Department");
+    Console.WriteLine("7-Search Employee");
+    Console.WriteLine("8-Remove Employee");
+    Console.WriteLine("9-Remove Department");
+    Console.WriteLine("0-Exit");
+    Console.Write("Emeliyyat secin: ");
+    command = Console.ReadLine();
+switch (command)
+{
+    case 1:
+        Console.Write("Fullname: ");
+        string fullName = Console.ReadLine();
+        Console.Write("Department Name: ");
+        departmentName = Console.ReadLine();
+        Console.Write("Position: ");
+        string position = Console.ReadLine();
+        Console.Write("Salary: ");
+        double salary = Convert.ToDouble(Console.ReadLine());
+        try
+        {
+            hrm.AddEmployee(fullName, departmentName, position, salary);
+            Console.WriteLine($"{fullName} adli isci ugurla elave olundu");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        break;
+        case 2:
+        Console.Write("Employee No: ");
+        string no = Console.ReadLine();
+        Console.Write("New Position: ");
+        string newPosition = Console.ReadLine();
+        Console.Write("New Salary: ");
+        double newSalary = Convert.ToDouble(Console.ReadLine());
+        try
+        {
+            hrm.EditEmployee(no, newPosition, newSalary);
+            Console.WriteLine($"{no} nomreli isci ugurla deyisdirildi");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        case 3:
+        hrm.GetAllDepartments();
+        break;
+        case 4:
+        Console.Write("Department Name: ");
+        string name = Console.ReadLine();
+        Console.Write("Employee Limit: ");
+        int employeeLimit = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Salary Limit: ");
+        double salaryLimit = Convert.ToDouble(Console.ReadLine());
+        try
+        {
+            hrm.AddDepartment(name, employeeLimit, salaryLimit);
+            Console.WriteLine($"{name} adli department ugurla elave olundu");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        break;
+        case 5:
+        Console.Write("Department Name: ");
+        string deptName = Console.ReadLine();
+        Console.Write("New Employee Limit: ");
+        int newEmployeeLimit = Convert.ToInt32(Console.ReadLine());
+        Console.Write("New Salary Limit: ");
+        double newSalaryLimit = Convert.ToDouble(Console.ReadLine());
+        try
+        {
+            hrm.EditDepartment(deptName, newEmployeeLimit, newSalaryLimit);
+            Console.WriteLine($"{deptName} adli department ugurla deyisdirildi");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        break;
+        case 7:
+        Console.Write("Search: ");
+        string search = Console.ReadLine();
+        hrm.SearchEmployee(search);
+        break;
+        case 8:
+        Console.Write("Employee No: ");
+        string empNo = Console.ReadLine();
+        try
+        {
+            hrm.RemoveEmployee(empNo);
+            Console.WriteLine($"{empNo} nomreli isci ugurla silindi");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        break;
+        case 9:
+        Console.Write("Department Name: ");
+        string deptToRemove = Console.ReadLine();
+        try
+        {
+            hrm.RemoveDepartment(deptToRemove);
+            Console.WriteLine($"{deptToRemove} adli department ugurla silindi");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        break;
+        case 0:
+        Environment.Exit(0);
+        break;
+        default:
+        Console.WriteLine("Yanlis emeliyyat secdiniz");
+}

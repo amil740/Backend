@@ -1,0 +1,14 @@
+﻿{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "OpenAI": {
+    "ApiKey": "your-openai-api-key-here"
+  },
+  "VideoAPI": {
+    "ApiKey": "your-video-api-key-here"
+  }
+}

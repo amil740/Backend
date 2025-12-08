@@ -1,0 +1,248 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\hrmanagementapp\\hrmanagementapp\\exceptions\\employeealreadyexistsexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|solutionrelative:hrmanagementapp\\exceptions\\employeealreadyexistsexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\hrmanagementapp\\hrmanagementapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|solutionrelative:hrmanagementapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\hrmanagementapp\\hrmanagementapp\\services\\humanresourcemanagerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|solutionrelative:hrmanagementapp\\services\\humanresourcemanagerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\hrmanagementapp\\hrmanagementapp\\interfaces\\ihumanresourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|solutionrelative:hrmanagementapp\\interfaces\\ihumanresourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\hrmanagementapp\\hrmanagementapp\\exceptions\\departmentnotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|solutionrelative:hrmanagementapp\\exceptions\\departmentnotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\hrmanagementapp\\hrmanagementapp\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|solutionrelative:hrmanagementapp\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\hrmanagementapp\\hrmanagementapp\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|solutionrelative:hrmanagementapp\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\hrmanagementapp\\hrmanagementapp\\exceptions\\departmentalreadyexistsexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|solutionrelative:hrmanagementapp\\exceptions\\departmentalreadyexistsexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\hrmanagementapp\\hrmanagementapp\\exceptions\\employeenotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|solutionrelative:hrmanagementapp\\exceptions\\employeenotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\hrmanagementapp\\hrmanagementapp\\exceptions\\employeelimitexceededexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|solutionrelative:hrmanagementapp\\exceptions\\employeelimitexceededexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\hrmanagementapp\\hrmanagementapp\\exceptions\\salarylimitexceededexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|solutionrelative:hrmanagementapp\\exceptions\\salarylimitexceededexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\hrmanagementapp\\hrmanagementapp\\exceptions\\departmentnotemptyexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|solutionrelative:hrmanagementapp\\exceptions\\departmentnotemptyexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|c:\\users\\amilm\\onedrive\\desktop\\pa201\\hrmanagementapp\\hrmanagementapp\\exceptions\\invalidlimitexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB37E98-F388-4418-A718-817431829E3E}|HRManagementApp\\HRManagementApp.csproj|solutionrelative:hrmanagementapp\\exceptions\\invalidlimitexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Program.cs",
+              "RelativeDocumentMoniker": "HRManagementApp\\Program.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Program.cs",
+              "RelativeToolTip": "HRManagementApp\\Program.cs",
+              "ViewState": "AgIAANQAAAAAAAAAAAAAAD0BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T11:26:39.836Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "InvalidLimitException.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\InvalidLimitException.cs",
+              "RelativeDocumentMoniker": "HRManagementApp\\Exceptions\\InvalidLimitException.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\InvalidLimitException.cs",
+              "RelativeToolTip": "HRManagementApp\\Exceptions\\InvalidLimitException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T10:08:11.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DepartmentNotEmptyException.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\DepartmentNotEmptyException.cs",
+              "RelativeDocumentMoniker": "HRManagementApp\\Exceptions\\DepartmentNotEmptyException.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\DepartmentNotEmptyException.cs",
+              "RelativeToolTip": "HRManagementApp\\Exceptions\\DepartmentNotEmptyException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T10:08:07.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SalaryLimitExceededException.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\SalaryLimitExceededException.cs",
+              "RelativeDocumentMoniker": "HRManagementApp\\Exceptions\\SalaryLimitExceededException.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\SalaryLimitExceededException.cs",
+              "RelativeToolTip": "HRManagementApp\\Exceptions\\SalaryLimitExceededException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T10:08:01.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EmployeeLimitExceededException.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\EmployeeLimitExceededException.cs",
+              "RelativeDocumentMoniker": "HRManagementApp\\Exceptions\\EmployeeLimitExceededException.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\EmployeeLimitExceededException.cs",
+              "RelativeToolTip": "HRManagementApp\\Exceptions\\EmployeeLimitExceededException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T10:07:56.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeAlreadyExistsException.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\EmployeeAlreadyExistsException.cs",
+              "RelativeDocumentMoniker": "HRManagementApp\\Exceptions\\EmployeeAlreadyExistsException.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\EmployeeAlreadyExistsException.cs",
+              "RelativeToolTip": "HRManagementApp\\Exceptions\\EmployeeAlreadyExistsException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T10:07:51.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EmployeeNotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\EmployeeNotFoundException.cs",
+              "RelativeDocumentMoniker": "HRManagementApp\\Exceptions\\EmployeeNotFoundException.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\EmployeeNotFoundException.cs",
+              "RelativeToolTip": "HRManagementApp\\Exceptions\\EmployeeNotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T10:07:45.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DepartmentAlreadyExistsException.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\DepartmentAlreadyExistsException.cs",
+              "RelativeDocumentMoniker": "HRManagementApp\\Exceptions\\DepartmentAlreadyExistsException.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\DepartmentAlreadyExistsException.cs",
+              "RelativeToolTip": "HRManagementApp\\Exceptions\\DepartmentAlreadyExistsException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T10:07:41.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DepartmentNotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\DepartmentNotFoundException.cs",
+              "RelativeDocumentMoniker": "HRManagementApp\\Exceptions\\DepartmentNotFoundException.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Exceptions\\DepartmentNotFoundException.cs",
+              "RelativeToolTip": "HRManagementApp\\Exceptions\\DepartmentNotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T10:07:35.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HumanResourceManagerService.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Services\\HumanResourceManagerService.cs",
+              "RelativeDocumentMoniker": "HRManagementApp\\Services\\HumanResourceManagerService.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Services\\HumanResourceManagerService.cs",
+              "RelativeToolTip": "HRManagementApp\\Services\\HumanResourceManagerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T10:06:05.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IHumanResourceManager.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Interfaces\\IHumanResourceManager.cs",
+              "RelativeDocumentMoniker": "HRManagementApp\\Interfaces\\IHumanResourceManager.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Interfaces\\IHumanResourceManager.cs",
+              "RelativeToolTip": "HRManagementApp\\Interfaces\\IHumanResourceManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T13:10:08.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Department.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Models\\Department.cs",
+              "RelativeDocumentMoniker": "HRManagementApp\\Models\\Department.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Models\\Department.cs",
+              "RelativeToolTip": "HRManagementApp\\Models\\Department.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAqwDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T12:02:08.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "HRManagementApp\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\amilm\\OneDrive\\Desktop\\Pa201\\HRManagementApp\\HRManagementApp\\Models\\Employee.cs",
+              "RelativeToolTip": "HRManagementApp\\Models\\Employee.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAqwEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T11:27:23.534Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

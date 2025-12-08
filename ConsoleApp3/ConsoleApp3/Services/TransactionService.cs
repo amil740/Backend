@@ -1,0 +1,121 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using ConsoleApp3.Interfaces;
+using ConsoleApp3.Transactions;
+using ConsoleApp3.Exceptions;
+using System.Text.Json;
+using System.IO;
+
+namespace ConsoleApp3.Services
+{
+    public class TransactionService : ITransactionService
+    {
+        private readonly string _filePath;
+
+        public TransactionService()
+        {
+            string dataDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Data");
+            if (!Directory.Exists(dataDirectory))
+            {
+                Directory.CreateDirectory(dataDirectory);
+            }
+
+            _filePath = Path.Combine(dataDirectory, "transactions.json");
+
+            if (!File.Exists(_filePath))
+            {
+                File.WriteAllText(_filePath, "[]");
+            }
+        }
+
+        public List<Transaction> GetAll()
+        {
+            if (!File.Exists(_filePath))
+            {
+                return new List<Transaction>();
+            }
+
+            string jsonContent = File.ReadAllText(_filePath);
+
+            if (string.IsNullOrEmpty(jsonContent))
+            {
+                return new List<Transaction>();
+            }
+
+            var transactions = JsonSerializer.Deserialize<List<Transaction>>(jsonContent);
+            return transactions ?? new List<Transaction>();
+        }
+
+        public void AddTransaction(Transaction transaction)
+        {
+            if (transaction == null)
+            {
+                throw new ArgumentNullException(nameof(transaction), "Tranziksiya null ola bilmez");
+            }
+
+            var transactions = GetAll();
+
+            if (transaction.Id <= 0)
+            {
+                transaction.Id = transactions.Count > 0 ? transactions.Max(t => t.Id) + 1 : 1;
+            }
+
+            if (transactions.Any(t => t.Id == transaction.Id))
+            {
+                throw new ConflictException($"Bu Id ({transaction.Id}) ile tranziksiya artiq movcuddur");
+            }
+
+            if (transaction.Amount <= 0)
+            {
+                throw new ArgumentException("Tranziksiya meblegi 0 dan boyuk olmalidir", nameof(transaction));
+            }
+
+            transactions.Add(transaction);
+            SaveTransactions(transactions);
+        }
+
+        public List<Transaction> GetTransactionsByCard(string cardNumber)
+        {
+            var transactions = GetAll();
+            return transactions
+                .Where(t => t.CardNumber == cardNumber)
+                .OrderByDescending(t => t.Date)
+                .ToList();
+        }
+
+        public List<Transaction> GetTransactionsByDateRange(DateTime startDate, DateTime endDate)
+        {
+            if (startDate > endDate)
+            {
+                throw new ArgumentException("Başlama tarixi bitiş tarixindən böyük ola bilməz");
+            }
+
+            var transactions = GetAll();
+            return transactions
+                .Where(t => t.Date >= startDate && t.Date <= endDate)
+                .OrderByDescending(t => t.Date)
+                .ToList();
+        }
+
+        public List<Transaction> GetCardTransactionsByDateRange(string cardNumber, DateTime startDate, DateTime endDate)
+        {
+            if (startDate > endDate)
+            {
+                throw new ArgumentException("Başlama tarixi bitiş tarixindən böyük ola bilməz");
+            }
+
+            var transactions = GetAll();
+            return transactions
+                .Where(t => t.CardNumber == cardNumber && t.Date >= startDate && t.Date <= endDate)
+                .OrderByDescending(t => t.Date)
+                .ToList();
+        }
+
+        private void SaveTransactions(List<Transaction> transactions)
+        {
+            string jsonContent = JsonSerializer.Serialize(transactions, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(_filePath, jsonContent);
+        }
+    }
+}

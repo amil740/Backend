@@ -1,0 +1,73 @@
+﻿using System.Linq.Expressions;
+using System;
+using HRManagementApp.Models;
+using HRManagementApp.Services;
+using HRManagementApp.Interfaces;
+
+HumanResourceManagerService hrm = new HumanResourceManagerService();
+
+// Add some departments
+hrm.AddDepartment("IT", 10, 50000);
+hrm.AddDepartment("HR", 5, 25000);
+hrm.AddDepartment("Finance", 8, 40000);
+
+Console.WriteLine("Departments created successfully!\n");
+
+// Get all departments
+Console.WriteLine("=== All Departments ===");
+hrm.GetAllDepartments();
+
+// Add some employees
+Console.WriteLine("\n=== Adding Employees ===");
+hrm.AddEmployee("Ali Mammadov", "IT", "Developer", 3000);
+hrm.AddEmployee("Leyla Hasanova", "IT", "Designer", 2500);
+hrm.AddEmployee("Kamran Aliyev", "HR", "Manager", 4000);
+
+Console.WriteLine("\n=== All Employees ===");
+hrm.GetAllEmployees();
+
+// Search employee
+Console.WriteLine("\n=== Search Employee (Ali) ===");
+hrm.SearchEmployee("Ali");
+
+// Edit employee
+Console.WriteLine("\n=== Edit Employee ===");
+var allDepts = hrm.Departments;
+if (allDepts.Any() && allDepts[0].Employees.Any())
+{
+    string empNo = allDepts[0].Employees[0].No;
+    hrm.EditEmployee(empNo, "Senior Developer", 3500);
+    Console.WriteLine($"Employee {empNo} updated successfully!");
+}
+
+// Show updated employees
+Console.WriteLine("\n=== Updated Employees ===");
+hrm.GetAllEmployees();
+
+// Edit department
+Console.WriteLine("\n=== Edit Department ===");
+hrm.EditDepartment("IT", 15, 60000);
+Console.WriteLine("IT Department updated successfully!");
+
+// Get updated departments
+Console.WriteLine("\n=== Updated Departments ===");
+hrm.GetAllDepartments();
+
+// Remove employee
+Console.WriteLine("\n=== Remove Employee ===");
+if (allDepts.Any() && allDepts[1].Employees.Any())
+{
+    string empNo = allDepts[1].Employees[0].No;
+    hrm.RemoveEmployee(empNo);
+    Console.WriteLine($"Employee {empNo} removed successfully!");
+}
+
+// Show final state
+Console.WriteLine("\n=== Final Employees List ===");
+hrm.GetAllEmployees();
+
+Console.WriteLine("\n=== Final Departments List ===");
+hrm.GetAllDepartments();
+
+Console.WriteLine("\nProgram completed!");
+

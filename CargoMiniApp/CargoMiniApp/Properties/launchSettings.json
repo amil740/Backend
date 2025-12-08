@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CargoMiniApp": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

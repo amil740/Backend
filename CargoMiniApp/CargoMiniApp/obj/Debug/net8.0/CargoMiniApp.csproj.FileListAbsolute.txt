@@ -1,0 +1,5 @@
+C:\Users\amilm\OneDrive\Desktop\Pa201\CargoMiniApp\CargoMiniApp\obj\Debug\net8.0\CargoMiniApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amilm\OneDrive\Desktop\Pa201\CargoMiniApp\CargoMiniApp\obj\Debug\net8.0\CargoMiniApp.AssemblyInfoInputs.cache
+C:\Users\amilm\OneDrive\Desktop\Pa201\CargoMiniApp\CargoMiniApp\obj\Debug\net8.0\CargoMiniApp.AssemblyInfo.cs
+C:\Users\amilm\OneDrive\Desktop\Pa201\CargoMiniApp\CargoMiniApp\obj\Debug\net8.0\CargoMiniApp.csproj.CoreCompileInputs.cache
+C:\Users\amilm\OneDrive\Desktop\Pa201\CargoMiniApp\CargoMiniApp\obj\Debug\net8.0\CargoMiniApp.sourcelink.json

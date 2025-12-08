@@ -1,0 +1,104 @@
+﻿using InsuranceProject.Data;
+using InsuranceProject.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+
+namespace InsuranceProject.Services
+{
+    public class AuthService : IAuthService
+    {
+        private readonly InsuranceDbContext _context;
+        private readonly IConfiguration _configuration;
+
+        public AuthService(InsuranceDbContext context, IConfiguration configuration)
+        {
+            _context = context;
+            _configuration = configuration;
+        }
+
+        public async Task<AuthResponse?> LoginAsync(LoginRequest request)
+        {
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.Username == request.Username && u.IsActive);
+
+            if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
+                return null;
+
+            var token = GenerateJwtToken(user);
+            var expires = DateTime.UtcNow.AddHours(24);
+
+            return new AuthResponse
+            {
+                Token = token,
+                Username = user.Username,
+                Role = user.Role,
+                Expires = expires
+            };
+        }
+
+        public async Task<AuthResponse?> RegisterAsync(RegisterRequest request)
+        {
+            // Check if user already exists
+            if (await _context.Users.AnyAsync(u => u.Username == request.Username || u.Email == request.Email))
+                return null;
+
+            var user = new User
+            {
+                Username = request.Username,
+                Email = request.Email,
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
+                Role = request.Role,
+                CreatedDate = DateTime.UtcNow,
+                IsActive = true
+            };
+
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+
+            var token = GenerateJwtToken(user);
+            var expires = DateTime.UtcNow.AddHours(24);
+
+            return new AuthResponse
+            {
+                Token = token,
+                Username = user.Username,
+                Role = user.Role,
+                Expires = expires
+            };
+        }
+
+        public async Task<User?> GetUserByUsernameAsync(string username)
+        {
+            return await _context.Users
+                .FirstOrDefaultAsync(u => u.Username == username && u.IsActive);
+        }
+
+        private string GenerateJwtToken(User user)
+        {
+            var secretKey = "your-super-secret-key-that-is-at-least-32-characters-long";
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var claims = new[]
+            {
+                new System.Security.Claims.Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new System.Security.Claims.Claim(ClaimTypes.Name, user.Username),
+                new System.Security.Claims.Claim(ClaimTypes.Email, user.Email),
+                new System.Security.Claims.Claim(ClaimTypes.Role, user.Role)
+            };
+
+            var token = new JwtSecurityToken(
+                issuer: "InsuranceAPI",
+                audience: "InsuranceClient",
+                claims: claims,
+                expires: DateTime.UtcNow.AddHours(24),
+                signingCredentials: credentials
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+    }
+}

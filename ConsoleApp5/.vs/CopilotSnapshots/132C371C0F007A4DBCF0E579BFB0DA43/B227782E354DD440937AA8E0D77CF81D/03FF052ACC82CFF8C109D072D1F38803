@@ -1,0 +1,14 @@
+﻿{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "OpenAI": {
+    "ApiKey": "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"
+  },
+  "VideoAPI": {
+    "ApiKey": "your-video-api-key-here"
+  }
+}

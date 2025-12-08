@@ -1,0 +1,11 @@
+﻿namespace CargoMiniApp.Models
+{
+    internal class Customer
+    {
+        public Customer()
+        {
+        
+        }
+
+    }
+}

@@ -1,0 +1,368 @@
+﻿// Tab Navigation
+const navItems = document.querySelectorAll('.nav-item');
+const tabContents = document.querySelectorAll('.tab-content');
+
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const tabName = item.getAttribute('data-tab');
+        
+        // Update active nav item
+        navItems.forEach(nav => nav.classList.remove('active'));
+        item.classList.add('active');
+        
+        // Update active tab content
+        tabContents.forEach(tab => tab.classList.remove('active'));
+        document.getElementById(`${tabName}-tab`).classList.add('active');
+    });
+});
+
+// Chat Functionality
+const chatInput = document.getElementById('chat-input');
+const chatSend = document.getElementById('chat-send');
+const chatMessages = document.getElementById('chat-messages');
+const loadingOverlay = document.getElementById('loading-overlay');
+
+let chatHistory = [];
+
+// Auto-resize textarea
+chatInput.addEventListener('input', function() {
+    this.style.height = 'auto';
+    this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+});
+
+// Send message on Enter (Shift+Enter for new line)
+chatInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendChatMessage();
+    }
+});
+
+chatSend.addEventListener('click', sendChatMessage);
+
+async function sendChatMessage() {
+    const message = chatInput.value.trim();
+    if (!message) return;
+    
+    // Add user message to chat
+    addMessageToChat('user', message);
+    chatInput.value = '';
+    chatInput.style.height = 'auto';
+    
+    // Add to history
+    chatHistory.push({ role: 'user', content: message });
+    
+    // Show loading
+    showLoading();
+    
+    try {
+        console.log('📤 Sending chat request...');
+        const response = await fetch('/api/ai/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                messages: chatHistory
+            })
+        });
+        
+        console.log('📥 Response status:', response.status);
+        
+        hideLoading();
+        
+        if (response.ok) {
+            const data = await response.json();
+            console.log('✅ Success:', data);
+            const assistantMessage = data.choices[0].message.content;
+            
+            addMessageToChat('assistant', assistantMessage);
+            chatHistory.push({ role: 'assistant', content: assistantMessage });
+        } else {
+            const errorData = await response.json();
+            console.error('❌ Error response:', errorData);
+            
+            let errorMessage = 'Sorry, I encountered an error. ';
+            if (response.status === 401) {
+                errorMessage += 'API key is invalid. Please check your configuration.';
+            } else if (response.status === 429) {
+                errorMessage += 'Rate limit exceeded or insufficient credits.';
+            } else {
+                errorMessage += 'Please make sure your API key is configured correctly.';
+            }
+            
+            addMessageToChat('assistant', errorMessage);
+        }
+    } catch (error) {
+        hideLoading();
+        console.error('❌ Chat error:', error);
+        addMessageToChat('assistant', 'Connection error. Please check your internet connection and API configuration.');
+    }
+}
+
+function addMessageToChat(role, content) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${role}`;
+    
+    const avatarDiv = document.createElement('div');
+    avatarDiv.className = 'message-avatar';
+    avatarDiv.innerHTML = role === 'user' ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+    
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'message-content';
+    
+    const textDiv = document.createElement('div');
+    textDiv.className = 'message-text';
+    textDiv.textContent = content;
+    
+    contentDiv.appendChild(textDiv);
+    messageDiv.appendChild(avatarDiv);
+    messageDiv.appendChild(contentDiv);
+    
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Image Generation
+const imagePrompt = document.getElementById('image-prompt');
+const imageSize = document.getElementById('image-size');
+const generateImageBtn = document.getElementById('generate-image-btn');
+const imageResult = document.getElementById('image-result');
+
+generateImageBtn.addEventListener('click', async () => {
+    const prompt = imagePrompt.value.trim();
+    if (!prompt) {
+        alert('Please enter an image description');
+        return;
+    }
+    
+    generateImageBtn.disabled = true;
+    showLoading();
+    
+    try {
+        const response = await fetch('/api/ai/generate-image', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                prompt: prompt,
+                size: imageSize.value
+            })
+        });
+        
+        hideLoading();
+        generateImageBtn.disabled = false;
+        
+        if (response.ok) {
+            const data = await response.json();
+            const imageUrl = data.data[0].url;
+            
+            imageResult.innerHTML = `
+                <img src="${imageUrl}" alt="Generated image">
+            `;
+            
+            // Add to gallery
+            addToGallery('image', imageUrl, prompt);
+        } else {
+            const error = await response.json();
+            alert('Failed to generate image. Please check your API key configuration.');
+            console.error('Image generation error:', error);
+        }
+    } catch (error) {
+        hideLoading();
+        generateImageBtn.disabled = false;
+        alert('Connection error. Please check your internet connection and API configuration.');
+        console.error('Image generation error:', error);
+    }
+});
+
+// Video Generation
+const videoPrompt = document.getElementById('video-prompt');
+const videoDuration = document.getElementById('video-duration');
+const generateVideoBtn = document.getElementById('generate-video-btn');
+const videoResult = document.getElementById('video-result');
+
+generateVideoBtn.addEventListener('click', async () => {
+    const prompt = videoPrompt.value.trim();
+    if (!prompt) {
+        alert('Please enter a video description');
+        return;
+    }
+    
+    generateVideoBtn.disabled = true;
+    showLoading();
+    
+    try {
+        const response = await fetch('/api/ai/generate-video', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                prompt: prompt,
+                duration: parseInt(videoDuration.value)
+            })
+        });
+        
+        hideLoading();
+        generateVideoBtn.disabled = false;
+        
+        if (response.ok) {
+            const data = await response.json();
+            
+            videoResult.innerHTML = `
+                <div style="padding: 40px; text-align: center;">
+                    <i class="fas fa-check-circle" style="font-size: 48px; color: #10b981; margin-bottom: 16px;"></i>
+                    <h3 style="margin-bottom: 8px;">Video Generation Started!</h3>
+                    <p style="color: var(--text-secondary);">${data.message}</p>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Video ID: ${data.videoId}</p>
+                </div>
+            `;
+            
+            // Note: In a production app, you would poll for video completion
+            // and then add it to the gallery
+        } else {
+            alert('Failed to generate video. This feature requires additional API configuration.');
+        }
+    } catch (error) {
+        hideLoading();
+        generateVideoBtn.disabled = false;
+        alert('Connection error. Please check your internet connection.');
+        console.error('Video generation error:', error);
+    }
+});
+
+// Gallery Management
+const galleryGrid = document.getElementById('gallery-grid');
+let galleryItems = [];
+
+function addToGallery(type, url, prompt) {
+    const item = {
+        type: type,
+        url: url,
+        prompt: prompt,
+        date: new Date().toISOString()
+    };
+    
+    galleryItems.push(item);
+    localStorage.setItem('aiGallery', JSON.stringify(galleryItems));
+    updateGallery();
+}
+
+function updateGallery() {
+    if (galleryItems.length === 0) {
+        galleryGrid.innerHTML = `
+            <div class="gallery-empty">
+                <i class="fas fa-images"></i>
+                <p>Your gallery is empty. Start creating!</p>
+            </div>
+        `;
+        return;
+    }
+    
+    galleryGrid.innerHTML = '';
+    
+    galleryItems.reverse().forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'gallery-item';
+        
+        const mediaTag = item.type === 'image' ? 'img' : 'video';
+        const date = new Date(item.date).toLocaleDateString();
+        
+        itemDiv.innerHTML = `
+            <${mediaTag} src="${item.url}" alt="${item.prompt}" ${item.type === 'video' ? 'controls' : ''}>
+            <div class="gallery-item-info">
+                <div class="gallery-item-title">${item.prompt.substring(0, 50)}${item.prompt.length > 50 ? '...' : ''}</div>
+                <div class="gallery-item-date">${date}</div>
+            </div>
+        `;
+        
+        itemDiv.addEventListener('click', () => {
+            window.open(item.url, '_blank');
+        });
+        
+        galleryGrid.appendChild(itemDiv);
+    });
+}
+
+// Load gallery from localStorage on page load
+window.addEventListener('DOMContentLoaded', () => {
+    const savedGallery = localStorage.getItem('aiGallery');
+    if (savedGallery) {
+        galleryItems = JSON.parse(savedGallery);
+        updateGallery();
+    }
+});
+
+// Loading Overlay Functions
+function showLoading() {
+    loadingOverlay.classList.add('active');
+}
+
+function hideLoading() {
+    loadingOverlay.classList.remove('active');
+}
+
+// Responsive Sidebar Toggle (for mobile)
+const sidebar = document.querySelector('.sidebar');
+let sidebarToggle = null;
+
+function createMobileMenu() {
+    if (window.innerWidth <= 768 && !sidebarToggle) {
+        sidebarToggle = document.createElement('button');
+        sidebarToggle.className = 'mobile-menu-toggle';
+        sidebarToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        sidebarToggle.style.cssText = `
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 101;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--background-light);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        `;
+        
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+        
+        document.body.appendChild(sidebarToggle);
+    } else if (window.innerWidth > 768 && sidebarToggle) {
+        sidebarToggle.remove();
+        sidebarToggle = null;
+        sidebar.classList.remove('open');
+    }
+}
+
+window.addEventListener('resize', createMobileMenu);
+createMobileMenu();
+
+// Close sidebar when clicking outside on mobile
+document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768 && 
+        sidebar.classList.contains('open') && 
+        !sidebar.contains(e.target) && 
+        !sidebarToggle.contains(e.target)) {
+        sidebar.classList.remove('open');
+    }
+});
+
+// Prevent form submission on Enter in textareas
+document.querySelectorAll('textarea').forEach(textarea => {
+    textarea.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey && textarea.id !== 'chat-input') {
+            // Allow Enter in other textareas without submitting
+        }
+    });
+});
+
+console.log('AI Creative Studio initialized! 🎨✨');

@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HRManagementApp.Interfaces
+{
+    internal interface IHumanResourceManager
+    {
+        public void AddEmployee(string fullName, string departmentName, string position, double salary);
+        public void EditEmployee(string no, string newPosition, double newSalary);
+        public void RemoveEmployee(string no);
+        public void GetAllEmployees();
+        public void SearchEmployee(string search);
+        public void AddDepartment(string name, int employeeLimit, double salaryLimit);
+        public void EditDepartment(string name, int newEmployeeLimit, double newSalaryLimit);
+        public void RemoveDepartment(string name);
+        public void GetAllDepartments();
+    }
+}
