@@ -1,0 +1,159 @@
+@{
+  ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="row">
+    <!-- Total Products -->
+    <div class="col-lg-3 col-6">
+  <div class="small-box bg-info">
+ <div class="inner">
+        <h3>150</h3>
+              <p>Total Products</p>
+            </div>
+<div class="icon">
+  <i class="fas fa-box"></i>
+            </div>
+  <a asp-controller="Products" asp-action="Index" class="small-box-footer">
+          More info <i class="fas fa-arrow-circle-right"></i>
+  </a>
+      </div>
+    </div>
+    
+    <!-- Total Categories -->
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-success">
+          <div class="inner">
+          <h3>20</h3>
+     <p>Categories</p>
+      </div>
+      <div class="icon">
+    <i class="fas fa-list"></i>
+ </div>
+    <a asp-controller="Categories" asp-action="Index" class="small-box-footer">
+     More info <i class="fas fa-arrow-circle-right"></i>
+        </a>
+        </div>
+    </div>
+    
+    <!-- Total Orders -->
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-warning">
+        <div class="inner">
+         <h3>44</h3>
+   <p>New Orders</p>
+       </div>
+            <div class="icon">
+     <i class="fas fa-shopping-cart"></i>
+       </div>
+            <a href="#" class="small-box-footer">
+  More info <i class="fas fa-arrow-circle-right"></i>
+   </a>
+   </div>
+    </div>
+  
+    <!-- Total Users -->
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-danger">
+            <div class="inner">
+   <h3>65</h3>
+        <p>Registered Users</p>
+     </div>
+            <div class="icon">
+   <i class="fas fa-users"></i>
+            </div>
+     <a href="#" class="small-box-footer">
+       More info <i class="fas fa-arrow-circle-right"></i>
+       </a>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Activity -->
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+   <h3 class="card-title">
+    <i class="fas fa-chart-line mr-1"></i>
+      Sales Overview
+      </h3>
+    </div>
+       <div class="card-body">
+        <div style="height: 300px; display: flex; align-items: center; justify-content: center; background: #f8f9fa; border-radius: 5px;">
+         <p style="color: #6c757d;">
+      <i class="fas fa-chart-bar fa-3x"></i><br/>
+          Sales chart will be displayed here
+         </p>
+   </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="col-md-4">
+     <div class="card">
+      <div class="card-header">
+   <h3 class="card-title">
+   <i class="fas fa-shopping-bag mr-1"></i>
+    Recent Orders
+  </h3>
+   </div>
+ <div class="card-body p-0">
+     <ul class="products-list product-list-in-card" style="list-style: none; padding: 15px; margin: 0;">
+                 <li style="padding: 10px 0; border-bottom: 1px solid #dee2e6;">
+          <div>
+             <strong>#ORD-001</strong>
+          <span class="badge badge-success float-right">Completed</span>
+        </div>
+        <small class="text-muted">John Doe - $125.99</small>
+                    </li>
+     <li style="padding: 10px 0; border-bottom: 1px solid #dee2e6;">
+     <div>
+                 <strong>#ORD-002</strong>
+        <span class="badge badge-warning float-right">Pending</span>
+     </div>
+    <small class="text-muted">Jane Smith - $89.50</small>
+           </li>
+        <li style="padding: 10px 0; border-bottom: 1px solid #dee2e6;">
+         <div>
+    <strong>#ORD-003</strong>
+           <span class="badge badge-info float-right">Processing</span>
+         </div>
+       <small class="text-muted">Bob Wilson - $210.00</small>
+         </li>
+         <li style="padding: 10px 0;">
+       <div>
+   <strong>#ORD-004</strong>
+          <span class="badge badge-danger float-right">Cancelled</span>
+ </div>
+    <small class="text-muted">Alice Brown - $45.25</small>
+      </li>
+                </ul>
+  </div>
+   </div>
+  </div>
+</div>
+
+<!-- Latest Products -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+      <div class="card-header">
+      <h3 class="card-title">
+              <i class="fas fa-box mr-1"></i>
+        Latest Products
+                </h3>
+     <div class="card-tools">
+  <a asp-controller="Products" asp-action="Create" class="btn btn-success btn-sm">
+   <i class="fas fa-plus"></i> Add New Product
+       </a>
+    </div>
+            </div>
+          <div class="card-body">
+     <p class="text-muted" style="text-align: center; padding: 20px;">
+   <i class="fas fa-box-open fa-2x"></i><br/>
+         Latest products list will be displayed here
+        </p>
+          </div>
+        </div>
+    </div>
+</div>

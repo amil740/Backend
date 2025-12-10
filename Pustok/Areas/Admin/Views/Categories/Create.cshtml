@@ -1,0 +1,66 @@
+@model Pustok.Models.Category
+
+@{
+    ViewData["Title"] = "Create Category";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Create New Category</h3>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+  <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+         
+    <div class="form-group">
+   <label asp-for="Name" class="control-label"></label>
+<input asp-for="Name" class="form-control" />
+      <span asp-validation-for="Name" class="text-danger"></span>
+   </div>
+
+       <div class="form-group">
+       <label asp-for="Description" class="control-label"></label>
+ <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+       <span asp-validation-for="Description" class="text-danger"></span>
+     </div>
+    
+    <div class="form-group">
+        <label asp-for="IconClass" class="control-label">Icon Class (e.g., fas fa-book)</label>
+     <input asp-for="IconClass" class="form-control" />
+       <span asp-validation-for="IconClass" class="text-danger"></span>
+        </div>
+ 
+      <div class="form-group">
+       <label asp-for="ParentCategoryId" class="control-label">Parent Category (Optional)</label>
+  <select asp-for="ParentCategoryId" class="form-control">
+   <option value="">-- Main Category --</option>
+@foreach (var category in ViewBag.ParentCategories)
+     {
+        <option value="@category.Id">@category.Name</option>
+        }
+    </select>
+    <span asp-validation-for="ParentCategoryId" class="text-danger"></span>
+  </div>
+ 
+   <div class="form-group">
+         <div class="form-check">
+           <input asp-for="IsActive" class="form-check-input" type="checkbox" checked />
+        <label asp-for="IsActive" class="form-check-label"></label>
+       </div>
+            </div>
+      
+        <div class="form-group">
+        <button type="submit" class="btn btn-primary">
+      <i class="fas fa-save"></i> Create
+        </button>
+      <a asp-action="Index" class="btn btn-secondary">
+          <i class="fas fa-times"></i> Cancel
+   </a>
+   </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
