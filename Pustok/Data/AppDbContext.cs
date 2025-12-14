@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Pustok.Models
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<AppUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -17,7 +18,6 @@ namespace Pustok.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            // Decimal precision
             modelBuilder.Entity<Product>()
                 .Property(p => p.Price)
                 .HasColumnType("decimal(18,2)");
@@ -38,34 +38,29 @@ namespace Pustok.Models
                 .Property(s => s.Price)
                 .HasColumnType("decimal(18,2)");
 
-            // Category self-referencing
             modelBuilder.Entity<Category>()
                 .HasOne(c => c.ParentCategory)
                 .WithMany(c => c.SubCategories)
                 .HasForeignKey(c => c.ParentCategoryId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Product - Category
             modelBuilder.Entity<Product>()
                 .HasOne(p => p.Category)
                 .WithMany(c => c.Products)
                 .HasForeignKey(p => p.CategoryId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Product - ProductImage
             modelBuilder.Entity<ProductImage>()
                 .HasOne(pi => pi.Product)
                 .WithMany(p => p.ProductImages)
                 .HasForeignKey(pi => pi.ProductId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Seed Data
             SeedData(modelBuilder);
         }
 
         private void SeedData(ModelBuilder modelBuilder)
         {
-            // Categories
             modelBuilder.Entity<Category>().HasData(
                 new Category { Id = 1, Name = "Arts & Photography", IsActive = true },
                 new Category { Id = 2, Name = "Biographies", IsActive = true },
@@ -75,8 +70,6 @@ namespace Pustok.Models
                 new Category { Id = 6, Name = "Cookbooks", IsActive = true },
                 new Category { Id = 7, Name = "Education", IsActive = true }
             );
-
-            // Products
             for (int i = 1; i <= 20; i++)
             {
                 modelBuilder.Entity<Product>().HasData(

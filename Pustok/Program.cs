@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Pustok.Models;
 
@@ -18,6 +19,29 @@ namespace Pustok
             builder.Services.AddDbContext<AppDbContext>(options =>
                      options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
+   {
+     options.Password.RequiredLength = 8;
+     options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireDigit = true;
+     options.Password.RequireLowercase = true;
+           options.Password.RequireUppercase = true;
+ options.User.RequireUniqueEmail = true;
+    options.Lockout.MaxFailedAccessAttempts = 5;
+          options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
+            })
+            .AddEntityFrameworkStores<AppDbContext>()
+            .AddDefaultTokenProviders();
+
+     builder.Services.ConfigureApplicationCookie(options =>
+            {
+        options.LoginPath = "/Account/Login";
+   options.LogoutPath = "/Account/Logout";
+     options.AccessDeniedPath = "/Account/AccessDenied";
+   options.ExpireTimeSpan = TimeSpan.FromDays(7);
+          options.SlidingExpiration = true;
+    });
+
             var app = builder.Build();
 
             if (!app.Environment.IsDevelopment())
@@ -25,10 +49,9 @@ namespace Pustok
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseStaticFiles();
-
             app.UseRouting();
-
-            app.UseAuthorization();
+   app.UseAuthentication();
+     app.UseAuthorization();
 
             app.MapControllerRoute(
            name: "admin",

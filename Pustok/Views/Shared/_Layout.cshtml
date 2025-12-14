@@ -193,8 +193,27 @@
                                 <div class="main-navigation flex-lg-right">
                                     <div class="cart-widget">
                                         <div class="login-block">
-                                            <a href="/login" class="font-weight-bold">Login</a> <br>
-                                            <span>or</span><a href="/register">Register</a>
+                                            @if (User.Identity?.IsAuthenticated == true)
+                                            {
+                                            <div class="dropdown">
+                                                <a href="#" class="dropdown-toggle font-weight-bold" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-user"></i> @User.Identity.Name
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="userDropdown">
+                                                    <a class="dropdown-item" asp-controller="Account" asp-action="Profile">My Profile</a>
+                                                    <a class="dropdown-item" asp-controller="Order" asp-action="MyOrders">My Orders</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
+                                                        <button type="submit" class="dropdown-item">Logout</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            }
+                                            else
+                                            {
+                                            <a asp-controller="Account" asp-action="Login" class="font-weight-bold">Login</a> <br>
+                                            <span>or</span><a asp-controller="Account" asp-action="Register">Register</a>
+                                            }
                                         </div>
                                         <div class="cart-block">
                                             <div class="cart-total">
@@ -571,6 +590,9 @@
         </div>
 
         <!-- ========== MAIN CONTENT ========== -->
+        <div class="container mt-3">
+    @await Html.PartialAsync("_Notifications")
+        </div>
         @RenderBody()
 
         <!-- ========== FOOTER ========== -->
