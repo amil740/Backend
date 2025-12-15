@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Pustok.ViewModels.Account
+namespace Pustok.ViewModels.Users
 {
-    public class RegisterViewModel
+    public class UserRegisterVm
     {
         [Required(ErrorMessage = "Full name is required")]
         [StringLength(100, MinimumLength = 2)]
@@ -33,5 +33,7 @@ namespace Pustok.ViewModels.Account
 
         [Display(Name = "Remember me")]
         public bool RememberMe { get; set; }
+
+        public string? ReturnUrl { get; set; }
     }
 }

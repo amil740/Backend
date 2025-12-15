@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Pustok.Models;
+using Pustok.Services.Implementations;
+using Pustok.Services.Interfaces;
 
 namespace Pustok
 {
@@ -21,26 +23,29 @@ namespace Pustok
 
             builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
    {
-     options.Password.RequiredLength = 8;
-     options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireDigit = true;
-     options.Password.RequireLowercase = true;
-           options.Password.RequireUppercase = true;
- options.User.RequireUniqueEmail = true;
-    options.Lockout.MaxFailedAccessAttempts = 5;
-          options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
-            })
+       options.Password.RequiredLength = 8;
+       options.Password.RequireNonAlphanumeric = false;
+       options.Password.RequireDigit = true;
+       options.Password.RequireLowercase = true;
+       options.Password.RequireUppercase = true;
+       options.User.RequireUniqueEmail = true;
+       options.Lockout.MaxFailedAccessAttempts = 5;
+       options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
+   })
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
 
-     builder.Services.ConfigureApplicationCookie(options =>
-            {
-        options.LoginPath = "/Account/Login";
-   options.LogoutPath = "/Account/Logout";
-     options.AccessDeniedPath = "/Account/AccessDenied";
-   options.ExpireTimeSpan = TimeSpan.FromDays(7);
-          options.SlidingExpiration = true;
-    });
+            builder.Services.ConfigureApplicationCookie(options =>
+                   {
+                       options.LoginPath = "/Account/Login";
+                       options.LogoutPath = "/Account/Logout";
+                       options.AccessDeniedPath = "/Account/AccessDenied";
+                       options.ExpireTimeSpan = TimeSpan.FromDays(7);
+                       options.SlidingExpiration = true;
+                   });
+            builder.Services.AddHttpContextAccessor();
+            builder.Services.AddScoped<IEmailService, EmailService>();
+            builder.Services.AddScoped<IFileService, FileService>();
 
             var app = builder.Build();
 
@@ -50,8 +55,8 @@ namespace Pustok
             }
             app.UseStaticFiles();
             app.UseRouting();
-   app.UseAuthentication();
-     app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.MapControllerRoute(
            name: "admin",

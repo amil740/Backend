@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Pages\" />
+    <Folder Include="ViewModels\Account\" />
   </ItemGroup>
 
   <ItemGroup>

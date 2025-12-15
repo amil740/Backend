@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Pustok.Models;
-using Pustok.ViewModels.Account;
+using Pustok.ViewModels.Users;
 
 namespace Pustok.Controllers
 {
@@ -18,18 +18,19 @@ namespace Pustok.Controllers
         }
 
         [HttpGet]
-        public IActionResult Register()
+        public IActionResult Register(string? returnUrl = null)
         {
             if (User.Identity?.IsAuthenticated == true)
             {
                 return RedirectToAction("Index", "Home");
             }
+            ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(UserRegisterVm model)
         {
             if (User.Identity?.IsAuthenticated == true)
             {
@@ -53,6 +54,12 @@ namespace Pustok.Controllers
                 {
                     await _signInManager.SignInAsync(user, isPersistent: model.RememberMe);
                     TempData["SuccessMessage"] = "Registration successful!";
+
+                    if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
+                    {
+                        return Redirect(model.ReturnUrl);
+                    }
+
                     return RedirectToAction("Index", "Home");
                 }
 
@@ -72,21 +79,18 @@ namespace Pustok.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginViewModel model, string? returnUrl = null)
+        public async Task<IActionResult> Login(UserLoginVm model)
         {
             if (User.Identity?.IsAuthenticated == true)
             {
                 return RedirectToAction("Index", "Home");
             }
-
-            ViewData["ReturnUrl"] = returnUrl;
 
             if (ModelState.IsValid)
             {
@@ -119,9 +123,9 @@ namespace Pustok.Controllers
                 {
                     TempData["SuccessMessage"] = "Login successful!";
 
-                    if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                    if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
                     {
-                        return Redirect(returnUrl);
+                        return Redirect(model.ReturnUrl);
                     }
 
                     return RedirectToAction("Index", "Home");
@@ -157,7 +161,7 @@ namespace Pustok.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordVm model)
         {
             if (ModelState.IsValid)
             {
@@ -182,6 +186,140 @@ namespace Pustok.Controllers
         public IActionResult AccessDenied()
         {
             return View();
+        }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> Profile()
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity!.Name!);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var model = new UserProfileVm
+            {
+                FullName = user.FullName,
+                Email = user.Email!,
+                Username = user.UserName!,
+                PhoneNumber = user.PhoneNumber,
+                CreatedDate = user.CreatedDate
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        public async Task<IActionResult> UpdateProfile(UserProfileUpdateVm model, string? CurrentPassword, string? NewPassword, string? ConfirmPassword)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByNameAsync(User.Identity!.Name!);
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                user.FullName = model.FullName;
+                user.PhoneNumber = model.PhoneNumber;
+
+                if (!string.IsNullOrEmpty(model.Email) && model.Email != user.Email)
+                {
+                    var emailExists = await _userManager.FindByEmailAsync(model.Email);
+                    if (emailExists != null && emailExists.Id != user.Id)
+                    {
+                        ModelState.AddModelError("Email", "This email is already in use");
+                        return View("EditProfile", model);
+                    }
+                    user.Email = model.Email;
+                }
+
+                var result = await _userManager.UpdateAsync(user);
+
+                if (result.Succeeded)
+                {
+                    // Handle password change if provided
+                    if (!string.IsNullOrEmpty(CurrentPassword) && !string.IsNullOrEmpty(NewPassword))
+                    {
+                        if (NewPassword != ConfirmPassword)
+                        {
+                            ModelState.AddModelError(string.Empty, "New password and confirmation do not match");
+                            return View("EditProfile", model);
+                        }
+
+                        var passwordChangeResult = await _userManager.ChangePasswordAsync(user, CurrentPassword, NewPassword);
+
+                        if (!passwordChangeResult.Succeeded)
+                        {
+                            foreach (var error in passwordChangeResult.Errors)
+                            {
+                                ModelState.AddModelError(string.Empty, error.Description);
+                            }
+                        return View("EditProfile", model);
+                         }
+        
+                       TempData["SuccessMessage"] = "Profile and password updated successfully!";
+                      }
+                    else
+                    {
+                       TempData["SuccessMessage"] = "Profile updated successfully!";
+                     }
+            
+                    return RedirectToAction("MyAccount");
+                 }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+            }
+
+            return View("EditProfile", model);
+        }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> MyAccount()
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity!.Name!);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var model = new UserProfileVm
+            {
+                FullName = user.FullName,
+                Email = user.Email!,
+                Username = user.UserName!,
+                PhoneNumber = user.PhoneNumber,
+                CreatedDate = user.CreatedDate
+            };
+
+            return View(model);
+        }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> EditProfile()
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity!.Name!);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var model = new UserProfileUpdateVm
+            {
+                FullName = user.FullName,
+                Email = user.Email!,
+                PhoneNumber = user.PhoneNumber
+            };
+
+            return View(model);
         }
     }
 }

@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Pustok.ViewModels.Account
+namespace Pustok.ViewModels.Users
 {
-    public class LoginViewModel
+    public class UserLoginVm
     {
         [Required(ErrorMessage = "Username or Email is required")]
         [Display(Name = "Username or Email")]
@@ -15,5 +15,7 @@ namespace Pustok.ViewModels.Account
 
         [Display(Name = "Remember me")]
         public bool RememberMe { get; set; }
+
+        public string? ReturnUrl { get; set; }
     }
 }

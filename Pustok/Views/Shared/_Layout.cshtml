@@ -161,7 +161,8 @@
                                                     <li><a href="/shop">Lighting & Studio</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="cat-item has-children"><a href="/shop">Biographies</a></li>
+                                            <li class="cat-item has-children"><a href="/shop">Biographies</a>
+                                            </li>
                                             <li class="cat-item has-children"><a href="/shop">Business & Money</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="/shop">Brake Tools</a></li>
@@ -200,11 +201,17 @@
                                                     <i class="fas fa-user"></i> @User.Identity.Name
                                                 </a>
                                                 <div class="dropdown-menu" aria-labelledby="userDropdown">
-                                                    <a class="dropdown-item" asp-controller="Account" asp-action="Profile">My Profile</a>
-                                                    <a class="dropdown-item" asp-controller="Order" asp-action="MyOrders">My Orders</a>
+                                                    <a class="dropdown-item" asp-controller="Account" asp-action="MyAccount">
+                                                        <i class="fas fa-user-circle"></i> My Account
+                                                    </a>
+                                                    <a class="dropdown-item" asp-controller="Order" asp-action="MyOrders">
+                                                        <i class="fas fa-shopping-bag"></i> My Orders
+                                                    </a>
                                                     <div class="dropdown-divider"></div>
                                                     <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
-                                                        <button type="submit" class="dropdown-item">Logout</button>
+                                                        <button type="submit" class="dropdown-item">
+                                                            <i class="fas fa-sign-out-alt"></i> Logout
+                                                        </button>
                                                     </form>
                                                 </div>
                                             </div>
