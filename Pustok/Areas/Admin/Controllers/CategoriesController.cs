@@ -13,8 +13,6 @@ namespace Pustok.Areas.Admin.Controllers
         {
             _context = context;
         }
-
-        // GET: Admin/Categories
         public async Task<IActionResult> Index()
         {
             var categories = await _context.Categories
@@ -24,7 +22,6 @@ namespace Pustok.Areas.Admin.Controllers
             return View(categories);
         }
 
-        // GET: Admin/Categories/Create
         public async Task<IActionResult> Create()
         {
             ViewBag.ParentCategories = await _context.Categories
@@ -32,25 +29,21 @@ namespace Pustok.Areas.Admin.Controllers
                 .ToListAsync();
             return View();
         }
-
-        // POST: Admin/Categories/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Category category)
         {
-            // Additional server-side validations
             if (string.IsNullOrWhiteSpace(category.Name))
             {
                 ModelState.AddModelError("Name", "Category name is required");
             }
 
-            // Check for duplicate category name
             if (await _context.Categories.AnyAsync(c => c.Name.ToLower() == category.Name.ToLower()))
             {
                 ModelState.AddModelError("Name", "A category with this name already exists");
             }
 
-            // Validate parent category if selected
+
             if (category.ParentCategoryId.HasValue)
             {
                 if (!await _context.Categories.AnyAsync(c => c.Id == category.ParentCategoryId && c.IsActive))
@@ -82,7 +75,7 @@ namespace Pustok.Areas.Admin.Controllers
             return View(category);
         }
 
-        // GET: Admin/Categories/Edit/5
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -102,7 +95,6 @@ namespace Pustok.Areas.Admin.Controllers
             return View(category);
         }
 
-        // POST: Admin/Categories/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Category category)
@@ -112,19 +104,16 @@ namespace Pustok.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            // Additional server-side validations
             if (string.IsNullOrWhiteSpace(category.Name))
             {
                 ModelState.AddModelError("Name", "Category name is required");
             }
 
-            // Check for duplicate category name (excluding current category)
             if (await _context.Categories.AnyAsync(c => c.Name.ToLower() == category.Name.ToLower() && c.Id != id))
             {
                 ModelState.AddModelError("Name", "A category with this name already exists");
             }
 
-            // Validate parent category if selected
             if (category.ParentCategoryId.HasValue)
             {
                 if (category.ParentCategoryId == id)
@@ -147,7 +136,6 @@ namespace Pustok.Areas.Admin.Controllers
                         return NotFound();
                     }
 
-                    // Update only allowed fields
                     existingCategory.Name = category.Name;
                     existingCategory.Description = category.Description;
                     existingCategory.IconClass = category.IconClass;
@@ -182,8 +170,6 @@ namespace Pustok.Areas.Admin.Controllers
                 .ToListAsync();
             return View(category);
         }
-
-        // POST: Admin/Categories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -197,14 +183,12 @@ namespace Pustok.Areas.Admin.Controllers
 
                 if (category != null)
                 {
-                    // Check if category has subcategories
                     if (category.SubCategories.Any())
                     {
                         TempData["ErrorMessage"] = "Cannot delete category with subcategories. Please delete subcategories first.";
                         return RedirectToAction(nameof(Index));
                     }
 
-                    // Check if category has products
                     if (category.Products.Any())
                     {
                         TempData["ErrorMessage"] = "Cannot delete category with products. Please reassign or delete products first.";

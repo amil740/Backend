@@ -1,0 +1,49 @@
+@using Microsoft.AspNetCore.Identity
+@using Pustok.Models
+@inject UserManager<AppUser> UserManager
+
+@{
+ var displayName = "Guest";
+    if (User.Identity?.IsAuthenticated == true)
+    {
+        var currentUser = await UserManager.FindByNameAsync(User.Identity.Name!);
+        displayName = currentUser?.FullName ?? User.Identity.Name ?? "User";
+    }
+}
+
+<div class="login-block">
+    @if (User.Identity?.IsAuthenticated == true)
+{
+ <div class="user-menu">
+          <a href="javascript:void(0)" class="font-weight-bold user-link">
+     <i class="fas fa-user-circle"></i> @displayName
+       </a>
+            <div class="user-dropdown">
+     <a asp-controller="Account" asp-action="MyAccount" class="dropdown-item">
+       <i class="fas fa-user"></i> My Account
+           </a>
+    <a asp-controller="Account" asp-action="MyAccount" class="dropdown-item">
+   <i class="fas fa-shopping-bag"></i> My Orders
+   </a>
+      <div class="dropdown-divider"></div>
+  <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+             @Html.AntiForgeryToken()
+       <button type="submit" class="dropdown-item logout-btn">
+           <i class="fas fa-sign-out-alt"></i> Logout
+       </button>
+ </form>
+  </div>
+        </div>
+    }
+    else
+    {
+        <a asp-controller="Account" asp-action="Login" class="font-weight-bold">
+    <i class="fas fa-sign-in-alt"></i> Login
+    </a>
+        <br>
+        <span>or</span>
+      <a asp-controller="Account" asp-action="Register">
+            <i class="fas fa-user-plus"></i> Register
+        </a>
+    }
+</div>

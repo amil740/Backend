@@ -13,6 +13,7 @@ namespace Pustok.Models
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Book> Books { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,6 +35,22 @@ namespace Pustok.Models
                 .Property(p => p.Rating)
                 .HasColumnType("decimal(3,2)");
 
+            modelBuilder.Entity<Book>()
+                .Property(b => b.Price)
+                .HasColumnType("decimal(18,2)");
+
+            modelBuilder.Entity<Book>()
+                .Property(b => b.OldPrice)
+                .HasColumnType("decimal(18,2)");
+
+            modelBuilder.Entity<Book>()
+                .Property(b => b.Weight)
+                .HasColumnType("decimal(18,2)");
+
+            modelBuilder.Entity<Book>()
+                .Property(b => b.Rating)
+                .HasColumnType("decimal(3,2)");
+
             modelBuilder.Entity<Slider>()
                 .Property(s => s.Price)
                 .HasColumnType("decimal(18,2)");
@@ -49,6 +66,12 @@ namespace Pustok.Models
                 .WithMany(c => c.Products)
                 .HasForeignKey(p => p.CategoryId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Book>()
+                .HasOne(b => b.Category)
+                .WithMany()
+                .HasForeignKey(b => b.CategoryId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<ProductImage>()
                 .HasOne(pi => pi.Product)

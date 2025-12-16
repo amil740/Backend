@@ -9,6 +9,7 @@
     <!-- Use Minified Plugins Version For Fast Page Load -->
     <link rel="stylesheet" type="text/css" media="screen" href="~/css/plugins.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="~/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/custom-user-menu.css" />
     <link rel="shortcut icon" type="image/x-icon" href="~/image/favicon.ico">
 </head>
 
@@ -171,15 +172,24 @@
                                                     <li><a href="/shop">Spools</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="cat-item has-children"><a href="/shop">Calendars</a></li>
-                                            <li class="cat-item has-children"><a href="/shop">Children's Books</a></li>
-                                            <li class="cat-item has-children"><a href="/shop">Comics</a></li>
-                                            <li class="cat-item"><a href="/shop">Perfomance Filters</a></li>
-                                            <li class="cat-item has-children"><a href="/shop">Cookbooks</a></li>
-                                            <li class="cat-item "><a href="/shop">Accessories</a></li>
-                                            <li class="cat-item "><a href="/shop">Education</a></li>
-                                            <li class="cat-item hidden-menu-item"><a href="/shop">Indoor Living</a></li>
-                                            <li class="cat-item"><a href="#" class="js-expand-hidden-menu">More Categories</a></li>
+                                            <li class="cat-item has-children"><a href="/shop">Calendars</a>
+                                            </li>
+                                            <li class="cat-item has-children"><a href="/shop">Children's Books</a>
+                                            </li>
+                                            <li class="cat-item has-children"><a href="/shop">Comics</a>
+                                            </li>
+                                            <li class="cat-item"><a href="/shop">Perfomance Filters</a>
+                                            </li>
+                                            <li class="cat-item has-children"><a href="/shop">Cookbooks</a>
+                                            </li>
+                                            <li class="cat-item "><a href="/shop">Accessories</a>
+                                            </li>
+                                            <li class="cat-item "><a href="/shop">Education</a>
+                                            </li>
+                                            <li class="cat-item hidden-menu-item"><a href="/shop">Indoor Living</a>
+                                            </li>
+                                            <li class="cat-item"><a href="#" class="js-expand-hidden-menu">More Categories</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -193,35 +203,7 @@
                             <div class="col-lg-4">
                                 <div class="main-navigation flex-lg-right">
                                     <div class="cart-widget">
-                                        <div class="login-block">
-                                            @if (User.Identity?.IsAuthenticated == true)
-                                            {
-                                            <div class="dropdown">
-                                                <a href="#" class="dropdown-toggle font-weight-bold" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-user"></i> @User.Identity.Name
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="userDropdown">
-                                                    <a class="dropdown-item" asp-controller="Account" asp-action="MyAccount">
-                                                        <i class="fas fa-user-circle"></i> My Account
-                                                    </a>
-                                                    <a class="dropdown-item" asp-controller="Order" asp-action="MyOrders">
-                                                        <i class="fas fa-shopping-bag"></i> My Orders
-                                                    </a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
-                                                        <button type="submit" class="dropdown-item">
-                                                            <i class="fas fa-sign-out-alt"></i> Logout
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            }
-                                            else
-                                            {
-                                            <a asp-controller="Account" asp-action="Login" class="font-weight-bold">Login</a> <br>
-                                            <span>or</span><a asp-controller="Account" asp-action="Register">Register</a>
-                                            }
-                                        </div>
+                                        @await Html.PartialAsync("_UserMenu")
                                         <div class="cart-block">
                                             <div class="cart-total">
                                                 <span class="text-number">1</span>
@@ -448,15 +430,7 @@
                                     <li>Ban</li>
                                 </ul>
                             </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">My Account <i class="fas fa-angle-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li><a href="/account">My Account</a></li>
-                                    <li><a href="/account">Order History</a></li>
-                                    <li><a href="/account">Transactions</a></li>
-                                    <li><a href="/account">Downloads</a></li>
-                                </ul>
-                            </li>
+                            @await Html.PartialAsync("_MobileUserMenu")
                         </ul>
                     </nav>
                     <div class="off-canvas-bottom">

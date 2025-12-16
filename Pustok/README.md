@@ -104,8 +104,25 @@ Pustok.MVC/
 - ? User profile management
 - ? **My Account dashboard with tabs**
 - ? **Profile update with password change**
+- ? **Dynamic header with user info**
+- ? **Show full name in header when logged in**
+- ? **Logout from header dropdown**
 - ? Account lockout after failed attempts
 - ? Remember me functionality
+
+### Header Features
+- ? **Guest Mode**: Shows "Login" and "Register" links
+- ? **Authenticated Mode**: 
+  - Displays user's full name
+  - Dropdown menu with:
+    - My Account
+ - My Orders
+    - Logout button
+- ? **Responsive Design**: 
+  - Desktop dropdown menu
+  - Mobile off-canvas menu
+  - Touch-friendly on mobile
+- ? **Partial Views**: Clean code with reusable components
 
 ### My Account Features
 - ? **Dashboard** - Account overview
