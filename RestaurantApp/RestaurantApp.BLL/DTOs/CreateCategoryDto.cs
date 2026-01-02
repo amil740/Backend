@@ -1,7 +1,0 @@
-namespace RestaurantApp.Core.DTOs
-{
-    public class CreateCategoryDto
-    {
-    public string Name { get; set; }
- }
-}
